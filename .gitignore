@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.py[cod]
+data_ext/
+*.egg-info/
+.pytest_cache/
+results/tmp/
+.env*
+src/nextview/_build.py
+src/nextview/lambda_app/evidence/*
+!src/nextview/lambda_app/evidence/.gitkeep
+docs/video/*.mp4

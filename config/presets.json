@@ -1,0 +1,59 @@
+{
+  "default": "wide_robot_handheld",
+  "presets": [
+    {
+      "id": "wide_robot_handheld",
+      "label": "Wide-angle robot cam, hand-held",
+      "family": "wide",
+      "actuator": "human",
+      "nuisances": [],
+      "failure_demo": false,
+      "notes": "Demo default; triggers switch_model"
+    },
+    {
+      "id": "inspection_gauge_cam",
+      "label": "Inspection-robot gauge camera",
+      "family": "normal",
+      "actuator": "robot",
+      "nuisances": [],
+      "failure_demo": false,
+      "notes": ""
+    },
+    {
+      "id": "drone_survey_cam",
+      "label": "Drone survey camera",
+      "family": "tele",
+      "actuator": "robot",
+      "nuisances": [],
+      "failure_demo": false,
+      "notes": ""
+    },
+    {
+      "id": "phone_crack_metrology",
+      "label": "Phone used for crack metrology",
+      "family": "webcam",
+      "actuator": "human",
+      "nuisances": ["glare"],
+      "failure_demo": false,
+      "notes": "Glare on"
+    },
+    {
+      "id": "fisheye_out_of_scope",
+      "label": "Fisheye lens (out of scope)",
+      "family": "fisheye130",
+      "actuator": "robot",
+      "nuisances": [],
+      "failure_demo": true,
+      "notes": "Failure demo: out-of-scope abstention"
+    },
+    {
+      "id": "autofocus_drift",
+      "label": "Webcam with autofocus drift",
+      "family": "webcam",
+      "actuator": "human",
+      "nuisances": ["autofocus_drift"],
+      "failure_demo": true,
+      "notes": "Failure demo: fx, fy x1.015 and k1 +0.01 after accepted frame 10"
+    }
+  ]
+}

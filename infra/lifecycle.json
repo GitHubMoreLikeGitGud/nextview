@@ -1,0 +1,18 @@
+{
+  "Rules": [
+    {
+      "ID": "expire-reports",
+      "Filter": { "Prefix": "reports/" },
+      "Status": "Enabled",
+      "Expiration": { "Days": 30 },
+      "AbortIncompleteMultipartUpload": { "DaysAfterInitiation": 1 }
+    },
+    {
+      "ID": "expire-traces",
+      "Filter": { "Prefix": "traces/" },
+      "Status": "Enabled",
+      "Expiration": { "Days": 30 },
+      "AbortIncompleteMultipartUpload": { "DaysAfterInitiation": 1 }
+    }
+  ]
+}

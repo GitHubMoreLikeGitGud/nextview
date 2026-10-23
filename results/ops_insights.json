@@ -1,0 +1,717 @@
+{
+ "generated_at": "2026-10-23T05:25:30Z",
+ "function": "opencv-hackathon-nextview",
+ "memory_mb": 512,
+ "region": "ap-southeast-1",
+ "live_version": "7d6e45e-20261023032948",
+ "live_since": "2026-10-23T03:30:23Z",
+ "traffic_note": "Before the entry was published (27 Oct 2026), all traffic was the author's own testing: deploy smoke tests, load tests at up to 10 concurrent clients against a 2 req/s stage throttle and a concurrency cap of 5, sequential latency runs and UI walkthroughs. The 429 and 503 responses come from the load tests.",
+ "notes": [
+  "Latency fields are the handler's own latency_ms.total (server side); Lambda REPORT durations include the runtime overhead around the handler.",
+  "gb_s is sum(billedDuration x memorySize); for container images the billed duration includes init.",
+  "API Gateway 4xx includes the stage throttle's 429s, which never reach Lambda; Lambda Throttles are the concurrency cap's 503s."
+ ],
+ "queries": {
+  "lambda_report": "filter @type = \"REPORT\"\n| stats count(*) as invocations, pct(@duration, 50) as p50_ms, pct(@duration, 95) as p95_ms, max(@duration) as max_ms, count(@initDuration) as cold_starts, avg(@initDuration) as init_avg_ms, max(@initDuration) as init_max_ms, sum(@billedDuration * @memorySize) / 1000 / 1073741824 as gb_s, max(@maxMemoryUsed) / 1048576 as max_memory_mb",
+  "routes_200": "filter ispresent(route) and ispresent(latency_ms.total) and status = 200\n| stats count(*) as n, pct(latency_ms.total, 50) as p50_ms, pct(latency_ms.total, 95) as p95_ms, max(latency_ms.total) as max_ms by route, mode\n| sort n desc",
+  "status_counts": "filter ispresent(route) and ispresent(status)\n| stats count(*) as n by status\n| sort status asc",
+  "non_200": "filter ispresent(route) and status != 200\n| stats count(*) as n by status, error, route\n| sort n desc\n| limit 40",
+  "handler_exceptions": "filter evt = \"error\"\n| stats count(*) as n by error, route\n| sort n desc",
+  "platform_failures": "filter @message like /Task timed out|Runtime\\.[A-Za-z]+Error|Runtime\\.OutOfMemory|Process exited before completing/\n| parse @message /(?<failure>Task timed out|Runtime\\.[A-Za-z]+|Process exited before completing)/\n| stats count(*) as n by failure",
+  "cold_by_route": "filter ispresent(route) and ispresent(cold)\n| stats count(*) as n by route, cold\n| sort n desc",
+  "init_warm": "filter evt = \"init_warm\"\n| stats count(*) as n, pct(ms, 50) as p50_ms, max(ms) as max_ms, count(error) as failed",
+  "nbv_sim": "filter evt = \"step\" and mode = \"sim\" and status = 200 and ispresent(latency_ms.nbv)\n| stats count(*) as n, pct(latency_ms.nbv, 50) as p50_ms, pct(latency_ms.nbv, 95) as p95_ms, max(latency_ms.nbv) as max_ms, pct(n_candidates, 50) as candidates_p50, min(n_candidates) as candidates_min",
+  "rules": "filter evt = \"step\" and status = 200\n| stats count(*) as n by rule\n| sort n desc"
+ },
+ "windows": {
+  "all": {
+   "start": "2026-10-22T23:13:55Z",
+   "end": "2026-10-23T05:22:30Z",
+   "label": "from the first retained log event (log group created 2026-10-22T23:13:55Z, retention 14 days)",
+   "lambda_report": [
+    {
+     "invocations": 1211,
+     "p50_ms": 1091.7,
+     "p95_ms": 2771.2,
+     "max_ms": 7790.0,
+     "cold_starts": 25,
+     "init_avg_ms": 1299.4,
+     "init_max_ms": 4091.6,
+     "gb_s": 612.9,
+     "max_memory_mb": 317.6
+    }
+   ],
+   "records_scanned": 4669,
+   "routes_200": [
+    {
+     "route": "/api/step",
+     "mode": "sim",
+     "n": 686,
+     "p50_ms": 1376.6,
+     "p95_ms": 2855.6,
+     "max_ms": 7787.8
+    },
+    {
+     "route": "/api/frame",
+     "mode": "webcam",
+     "n": 68,
+     "p50_ms": 1234,
+     "p95_ms": 3243.2,
+     "max_ms": 3970.6
+    },
+    {
+     "route": "/api/session",
+     "mode": "sim",
+     "n": 59,
+     "p50_ms": 1361.6,
+     "p95_ms": 3375.9,
+     "max_ms": 3507.3
+    },
+    {
+     "route": "/api/health",
+     "mode": "none",
+     "n": 49,
+     "p50_ms": 0.1,
+     "p95_ms": 0.1,
+     "max_ms": 0.1
+    },
+    {
+     "route": "/api/approve",
+     "mode": "sim",
+     "n": 21,
+     "p50_ms": 1232.5,
+     "p95_ms": 2027.5,
+     "max_ms": 2049.3
+    },
+    {
+     "route": "/",
+     "mode": "none",
+     "n": 21,
+     "p50_ms": 0.1,
+     "p95_ms": 0.9,
+     "max_ms": 14.7
+    },
+    {
+     "route": "/api/presets",
+     "mode": "none",
+     "n": 20,
+     "p50_ms": 0.1,
+     "p95_ms": 0.3,
+     "max_ms": 0.4
+    },
+    {
+     "route": "/app.js",
+     "mode": "none",
+     "n": 19,
+     "p50_ms": 0.1,
+     "p95_ms": 0.5,
+     "max_ms": 0.5
+    },
+    {
+     "route": "/style.css",
+     "mode": "none",
+     "n": 14,
+     "p50_ms": 0.1,
+     "p95_ms": 0.6,
+     "max_ms": 0.6
+    },
+    {
+     "route": "/api/board.png",
+     "mode": "none",
+     "n": 9,
+     "p50_ms": 0.1,
+     "p95_ms": 1115,
+     "max_ms": 1115
+    },
+    {
+     "route": "/api/session",
+     "mode": "webcam",
+     "n": 7,
+     "p50_ms": 0.4,
+     "p95_ms": 1.8,
+     "max_ms": 1.8
+    },
+    {
+     "route": "/api/evidence",
+     "mode": "none",
+     "n": 6,
+     "p50_ms": 0.4,
+     "p95_ms": 0.5,
+     "max_ms": 0.5
+    },
+    {
+     "route": "/api/approve",
+     "mode": "webcam",
+     "n": 1,
+     "p50_ms": 464.2,
+     "p95_ms": 464.2,
+     "max_ms": 464.2
+    }
+   ],
+   "status_counts": [
+    {
+     "status": 200,
+     "n": 980
+    },
+    {
+     "status": 400,
+     "n": 18
+    },
+    {
+     "status": 404,
+     "n": 2
+    },
+    {
+     "status": 405,
+     "n": 1
+    },
+    {
+     "status": 413,
+     "n": 6
+    }
+   ],
+   "non_200": [
+    {
+     "status": 400,
+     "error": "BAD_REQUEST",
+     "route": "/api/frame",
+     "n": 5
+    },
+    {
+     "status": 400,
+     "error": "BAD_REQUEST",
+     "route": "/api/approve",
+     "n": 4
+    },
+    {
+     "status": 400,
+     "error": "BAD_REQUEST",
+     "route": "/api/session",
+     "n": 3
+    },
+    {
+     "status": 400,
+     "error": "BAD_REQUEST",
+     "route": "/api/step",
+     "n": 3
+    },
+    {
+     "status": 413,
+     "error": "PAYLOAD_TOO_LARGE",
+     "route": "/api/step",
+     "n": 2
+    },
+    {
+     "status": 413,
+     "error": "PAYLOAD_TOO_LARGE",
+     "route": "/api/frame",
+     "n": 2
+    },
+    {
+     "status": 400,
+     "error": "STATE_TAMPERED",
+     "route": "/api/step",
+     "n": 2
+    },
+    {
+     "status": 405,
+     "error": "BAD_REQUEST",
+     "route": "/api/step",
+     "n": 1
+    },
+    {
+     "status": 400,
+     "error": "BAD_REQUEST",
+     "route": "/api/board.png",
+     "n": 1
+    },
+    {
+     "status": 404,
+     "error": "NOT_FOUND",
+     "route": "/api/export/*",
+     "n": 1
+    },
+    {
+     "status": 404,
+     "error": "NOT_FOUND",
+     "route": "other",
+     "n": 1
+    },
+    {
+     "status": 413,
+     "error": "PAYLOAD_TOO_LARGE",
+     "route": "/api/session",
+     "n": 1
+    },
+    {
+     "status": 413,
+     "error": "STATE_TOO_LARGE",
+     "route": "/api/step",
+     "n": 1
+    }
+   ],
+   "handler_exceptions": [],
+   "platform_failures": [],
+   "cold_by_route": [
+    {
+     "route": "/api/step",
+     "cold": 0,
+     "n": 694
+    },
+    {
+     "route": "/api/frame",
+     "cold": 0,
+     "n": 75
+    },
+    {
+     "route": "/api/session",
+     "cold": 0,
+     "n": 63
+    },
+    {
+     "route": "/api/health",
+     "cold": 0,
+     "n": 41
+    },
+    {
+     "route": "/api/approve",
+     "cold": 0,
+     "n": 26
+    },
+    {
+     "route": "/api/presets",
+     "cold": 0,
+     "n": 20
+    },
+    {
+     "route": "/",
+     "cold": 0,
+     "n": 19
+    },
+    {
+     "route": "/app.js",
+     "cold": 0,
+     "n": 18
+    },
+    {
+     "route": "/style.css",
+     "cold": 0,
+     "n": 14
+    },
+    {
+     "route": "/api/board.png",
+     "cold": 0,
+     "n": 10
+    },
+    {
+     "route": "/api/health",
+     "cold": 1,
+     "n": 8
+    },
+    {
+     "route": "/api/session",
+     "cold": 1,
+     "n": 7
+    },
+    {
+     "route": "/api/evidence",
+     "cold": 0,
+     "n": 6
+    },
+    {
+     "route": "/api/step",
+     "cold": 1,
+     "n": 1
+    },
+    {
+     "route": "/",
+     "cold": 1,
+     "n": 1
+    },
+    {
+     "route": "/api/export/*",
+     "cold": 0,
+     "n": 1
+    },
+    {
+     "route": "other",
+     "cold": 0,
+     "n": 1
+    }
+   ],
+   "init_warm": [
+    {
+     "n": 23,
+     "p50_ms": 584.7,
+     "max_ms": 771.9
+    }
+   ],
+   "nbv_sim": [
+    {
+     "n": 380,
+     "p50_ms": 123.9,
+     "p95_ms": 140.8,
+     "max_ms": 179.7,
+     "candidates_p50": 283,
+     "candidates_min": 60
+    }
+   ],
+   "rules": [
+    {
+     "rule": "R13_NBV",
+     "n": 475
+    },
+    {
+     "rule": "R2_BLUR",
+     "n": 116
+    },
+    {
+     "rule": "R5_OFF_TARGET",
+     "n": 53
+    },
+    {
+     "rule": "R0_NO_BOARD",
+     "n": 38
+    },
+    {
+     "rule": "R3_GLARE",
+     "n": 23
+    },
+    {
+     "rule": "R7_OUTLIER",
+     "n": 23
+    },
+    {
+     "rule": "R8_UNDERFIT",
+     "n": 9
+    },
+    {
+     "rule": "R11_STOP",
+     "n": 8
+    },
+    {
+     "rule": "R12_BUDGET",
+     "n": 6
+    },
+    {
+     "rule": "R4_AMBIGUOUS",
+     "n": 1
+    }
+   ],
+   "cloudwatch_metrics": {
+    "duration_ms": 1287153.1,
+    "invocations": 1213,
+    "errors": 0,
+    "throttles": 56,
+    "concurrency_max": 5,
+    "api_requests": 1675,
+    "api_4xx": 437,
+    "api_5xx": 56
+   },
+   "derived": {
+    "handler_4xx": 27,
+    "handler_5xx": 0,
+    "stage_throttle_429_est": 410,
+    "concurrency_cap_503": 56,
+    "note": "stage_throttle_429_est = API Gateway 4xx minus the handler's own 4xx; concurrency_cap_503 = Lambda Throttles (returned to the client as 503)."
+   }
+  },
+  "build": {
+   "start": "2026-10-23T03:30:23Z",
+   "end": "2026-10-23T05:22:30Z",
+   "label": "from the last function update (image tag 7d6e45e-20261023032948)",
+   "lambda_report": [
+    {
+     "invocations": 451,
+     "p50_ms": 1305.6,
+     "p95_ms": 2787.9,
+     "max_ms": 4641.3,
+     "cold_starts": 7,
+     "init_avg_ms": 1254.2,
+     "init_max_ms": 1828.7,
+     "gb_s": 278.5,
+     "max_memory_mb": 255.6
+    }
+   ],
+   "records_scanned": 1820,
+   "routes_200": [
+    {
+     "route": "/api/step",
+     "mode": "sim",
+     "n": 310,
+     "p50_ms": 1408.6,
+     "p95_ms": 2841.3,
+     "max_ms": 4639
+    },
+    {
+     "route": "/api/frame",
+     "mode": "webcam",
+     "n": 44,
+     "p50_ms": 1302.5,
+     "p95_ms": 1762.5,
+     "max_ms": 2177.8
+    },
+    {
+     "route": "/api/session",
+     "mode": "sim",
+     "n": 22,
+     "p50_ms": 1373.3,
+     "p95_ms": 3372.9,
+     "max_ms": 3507.3
+    },
+    {
+     "route": "/api/presets",
+     "mode": "none",
+     "n": 12,
+     "p50_ms": 0.2,
+     "p95_ms": 0.4,
+     "max_ms": 0.4
+    },
+    {
+     "route": "/app.js",
+     "mode": "none",
+     "n": 11,
+     "p50_ms": 0.1,
+     "p95_ms": 0.5,
+     "max_ms": 0.5
+    },
+    {
+     "route": "/api/approve",
+     "mode": "sim",
+     "n": 11,
+     "p50_ms": 1202.7,
+     "p95_ms": 1876.2,
+     "max_ms": 1876.2
+    },
+    {
+     "route": "/",
+     "mode": "none",
+     "n": 11,
+     "p50_ms": 0.1,
+     "p95_ms": 14.7,
+     "max_ms": 14.7
+    },
+    {
+     "route": "/style.css",
+     "mode": "none",
+     "n": 10,
+     "p50_ms": 0.1,
+     "p95_ms": 0.4,
+     "max_ms": 0.4
+    },
+    {
+     "route": "/api/health",
+     "mode": "none",
+     "n": 10,
+     "p50_ms": 0.1,
+     "p95_ms": 0.1,
+     "max_ms": 0.1
+    },
+    {
+     "route": "/api/session",
+     "mode": "webcam",
+     "n": 4,
+     "p50_ms": 0.4,
+     "p95_ms": 1.8,
+     "max_ms": 1.8
+    },
+    {
+     "route": "/api/evidence",
+     "mode": "none",
+     "n": 4,
+     "p50_ms": 0.1,
+     "p95_ms": 0.5,
+     "max_ms": 0.5
+    },
+    {
+     "route": "/api/board.png",
+     "mode": "none",
+     "n": 1,
+     "p50_ms": 0.1,
+     "p95_ms": 0.1,
+     "max_ms": 0.1
+    }
+   ],
+   "status_counts": [
+    {
+     "status": 200,
+     "n": 450
+    },
+    {
+     "status": 400,
+     "n": 3
+    }
+   ],
+   "non_200": [
+    {
+     "status": 400,
+     "error": "BAD_REQUEST",
+     "route": "/api/approve",
+     "n": 1
+    },
+    {
+     "status": 400,
+     "error": "BAD_REQUEST",
+     "route": "/api/frame",
+     "n": 1
+    },
+    {
+     "status": 400,
+     "error": "BAD_REQUEST",
+     "route": "/api/step",
+     "n": 1
+    }
+   ],
+   "handler_exceptions": [],
+   "platform_failures": [],
+   "cold_by_route": [
+    {
+     "route": "/api/step",
+     "cold": 0,
+     "n": 311
+    },
+    {
+     "route": "/api/frame",
+     "cold": 0,
+     "n": 45
+    },
+    {
+     "route": "/api/session",
+     "cold": 0,
+     "n": 22
+    },
+    {
+     "route": "/api/approve",
+     "cold": 0,
+     "n": 12
+    },
+    {
+     "route": "/api/presets",
+     "cold": 0,
+     "n": 12
+    },
+    {
+     "route": "/style.css",
+     "cold": 0,
+     "n": 10
+    },
+    {
+     "route": "/app.js",
+     "cold": 0,
+     "n": 10
+    },
+    {
+     "route": "/",
+     "cold": 0,
+     "n": 9
+    },
+    {
+     "route": "/api/health",
+     "cold": 0,
+     "n": 8
+    },
+    {
+     "route": "/api/session",
+     "cold": 1,
+     "n": 4
+    },
+    {
+     "route": "/api/evidence",
+     "cold": 0,
+     "n": 4
+    },
+    {
+     "route": "/api/health",
+     "cold": 1,
+     "n": 2
+    },
+    {
+     "route": "/api/board.png",
+     "cold": 0,
+     "n": 1
+    },
+    {
+     "route": "/",
+     "cold": 1,
+     "n": 1
+    }
+   ],
+   "init_warm": [
+    {
+     "n": 8,
+     "p50_ms": 577.3,
+     "max_ms": 678.6
+    }
+   ],
+   "nbv_sim": [
+    {
+     "n": 162,
+     "p50_ms": 123.9,
+     "p95_ms": 141.0,
+     "max_ms": 157.9,
+     "candidates_p50": 270,
+     "candidates_min": 211
+    }
+   ],
+   "rules": [
+    {
+     "rule": "R13_NBV",
+     "n": 181
+    },
+    {
+     "rule": "R2_BLUR",
+     "n": 62
+    },
+    {
+     "rule": "R5_OFF_TARGET",
+     "n": 45
+    },
+    {
+     "rule": "R0_NO_BOARD",
+     "n": 29
+    },
+    {
+     "rule": "R7_OUTLIER",
+     "n": 14
+    },
+    {
+     "rule": "R3_GLARE",
+     "n": 8
+    },
+    {
+     "rule": "R8_UNDERFIT",
+     "n": 7
+    },
+    {
+     "rule": "R11_STOP",
+     "n": 4
+    },
+    {
+     "rule": "R12_BUDGET",
+     "n": 1
+    },
+    {
+     "rule": "R4_AMBIGUOUS",
+     "n": 1
+    }
+   ],
+   "cloudwatch_metrics": {
+    "duration_ms": 586254.7,
+    "invocations": 453,
+    "errors": 0,
+    "throttles": 21,
+    "concurrency_max": 5,
+    "api_requests": 665,
+    "api_4xx": 194,
+    "api_5xx": 21
+   },
+   "derived": {
+    "handler_4xx": 3,
+    "handler_5xx": 0,
+    "stage_throttle_429_est": 191,
+    "concurrency_cap_503": 21,
+    "note": "stage_throttle_429_est = API Gateway 4xx minus the handler's own 4xx; concurrency_cap_503 = Lambda Throttles (returned to the client as 503)."
+   }
+  }
+ }
+}

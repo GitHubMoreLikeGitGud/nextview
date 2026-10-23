@@ -1,0 +1,2344 @@
+{
+ "url": "https://t4zn85l054.execute-api.ap-southeast-1.amazonaws.com",
+ "mode": "sim",
+ "sessions": 4,
+ "steps_per_session": 40,
+ "concurrency": 1,
+ "presets": [
+  "drone_survey_cam",
+  "inspection_gauge_cam",
+  "phone_crack_metrology",
+  "wide_robot_handheld"
+ ],
+ "wall_s": 257.0,
+ "http_responses": 140,
+ "rate_429": 0.0071,
+ "rate_503": 0.0,
+ "logical_requests": 139,
+ "logical_failures": 0,
+ "sessions_failed": 0,
+ "routes": {
+  "/api/approve": {
+   "requests": 4,
+   "ok": 4,
+   "failed": 0,
+   "http_responses": 4,
+   "http_429": 0,
+   "http_503": 0,
+   "http_5xx_other": 0,
+   "network_errors": 0,
+   "retried": 0,
+   "retried_then_ok": 0,
+   "client_ms_p50": 1969.1,
+   "client_ms_p95": 2064.0,
+   "client_ms_max": 2068.9,
+   "with_retries_ms_p95": 2064.0,
+   "server_ms_p50": 525.0,
+   "server_ms_p95": 1636.9,
+   "server_ms_max": 1832.5
+  },
+  "/api/session": {
+   "requests": 4,
+   "ok": 4,
+   "failed": 0,
+   "http_responses": 4,
+   "http_429": 0,
+   "http_503": 0,
+   "http_5xx_other": 0,
+   "network_errors": 0,
+   "retried": 0,
+   "retried_then_ok": 0,
+   "client_ms_p50": 1315.7,
+   "client_ms_p95": 2915.6,
+   "client_ms_max": 3175.7,
+   "with_retries_ms_p95": 2915.6,
+   "server_ms_p50": 1264.7,
+   "server_ms_p95": 2810.5,
+   "server_ms_max": 3060.6
+  },
+  "/api/step": {
+   "requests": 131,
+   "ok": 131,
+   "failed": 0,
+   "http_responses": 132,
+   "http_429": 1,
+   "http_503": 0,
+   "http_5xx_other": 0,
+   "network_errors": 0,
+   "retried": 1,
+   "retried_then_ok": 1,
+   "client_ms_p50": 1613.0,
+   "client_ms_p95": 4083.4,
+   "client_ms_max": 6402.9,
+   "with_retries_ms_p95": 4083.4,
+   "server_ms_p50": 1499.2,
+   "server_ms_p95": 3992.7,
+   "server_ms_max": 6291.7
+  }
+ },
+ "session_results": [
+  {
+   "session": 0,
+   "preset": "wide_robot_handheld",
+   "calls": 33,
+   "status": "exported",
+   "error": null
+  },
+  {
+   "session": 1,
+   "preset": "inspection_gauge_cam",
+   "calls": 30,
+   "status": "exported",
+   "error": null
+  },
+  {
+   "session": 2,
+   "preset": "drone_survey_cam",
+   "calls": 32,
+   "status": "exported",
+   "error": null
+  },
+  {
+   "session": 3,
+   "preset": "phone_crack_metrology",
+   "calls": 40,
+   "status": "continue",
+   "error": null
+  }
+ ],
+ "rules": {
+  "APPROVAL": 3,
+  "R11_STOP": 2,
+  "R12_BUDGET": 1,
+  "R13_NBV": 94,
+  "R2_BLUR": 23,
+  "R3_GLARE": 6,
+  "R5_OFF_TARGET": 3,
+  "R7_OUTLIER": 2,
+  "R8_UNDERFIT": 1
+ },
+ "utc": "2026-10-23T02:45:17Z",
+ "calls": [
+  {
+   "route": "/api/session",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 3175.7,
+   "total_ms": 3175.7,
+   "server_ms": 3060.6,
+   "rule": null,
+   "error": null,
+   "session": 0
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1083.5,
+   "total_ms": 1083.5,
+   "server_ms": 1008.7,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 0,
+   "k": 0
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1140.5,
+   "total_ms": 1140.6,
+   "server_ms": 1069.1,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 0,
+   "k": 1
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1384.5,
+   "total_ms": 1384.5,
+   "server_ms": 1305.0,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 0,
+   "k": 2
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 991.9,
+   "total_ms": 991.9,
+   "server_ms": 900.3,
+   "rule": "R2_BLUR",
+   "error": null,
+   "session": 0,
+   "k": 3
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 900.3,
+   "total_ms": 900.3,
+   "server_ms": 816.1,
+   "rule": "R2_BLUR",
+   "error": null,
+   "session": 0,
+   "k": 4
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1287.8,
+   "total_ms": 1287.8,
+   "server_ms": 1217.9,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 0,
+   "k": 5
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 834.6,
+   "total_ms": 834.6,
+   "server_ms": 768.2,
+   "rule": "R2_BLUR",
+   "error": null,
+   "session": 0,
+   "k": 6
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 997.6,
+   "total_ms": 997.6,
+   "server_ms": 908.6,
+   "rule": "R2_BLUR",
+   "error": null,
+   "session": 0,
+   "k": 7
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1167.2,
+   "total_ms": 1167.2,
+   "server_ms": 1098.0,
+   "rule": "R5_OFF_TARGET",
+   "error": null,
+   "session": 0,
+   "k": 8
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1136.8,
+   "total_ms": 1136.8,
+   "server_ms": 1071.4,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 0,
+   "k": 9
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1236.6,
+   "total_ms": 1236.6,
+   "server_ms": 1151.7,
+   "rule": "R2_BLUR",
+   "error": null,
+   "session": 0,
+   "k": 10
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1465.1,
+   "total_ms": 1465.1,
+   "server_ms": 1395.0,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 0,
+   "k": 11
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1294.0,
+   "total_ms": 1294.0,
+   "server_ms": 1206.5,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 0,
+   "k": 12
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1322.4,
+   "total_ms": 1322.4,
+   "server_ms": 1237.9,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 0,
+   "k": 13
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1717.4,
+   "total_ms": 1717.4,
+   "server_ms": 1618.4,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 0,
+   "k": 14
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 3240.2,
+   "total_ms": 3240.3,
+   "server_ms": 3144.2,
+   "rule": "R2_BLUR",
+   "error": null,
+   "session": 0,
+   "k": 15
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 2223.7,
+   "total_ms": 2223.7,
+   "server_ms": 2119.7,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 0,
+   "k": 16
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 3999.7,
+   "total_ms": 3999.7,
+   "server_ms": 3911.7,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 0,
+   "k": 17
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    429,
+    200
+   ],
+   "tries": 2,
+   "client_ms": 4705.7,
+   "total_ms": 5216.5,
+   "server_ms": 4619.7,
+   "rule": "R8_UNDERFIT",
+   "error": null,
+   "session": 0,
+   "k": 18
+  },
+  {
+   "route": "/api/approve",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1901.8,
+   "total_ms": 1901.8,
+   "server_ms": 1832.5,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 0,
+   "k": 19
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 2057.5,
+   "total_ms": 2057.6,
+   "server_ms": 1947.7,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 0,
+   "k": 20
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 4167.2,
+   "total_ms": 4167.2,
+   "server_ms": 4073.7,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 0,
+   "k": 21
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 4917.4,
+   "total_ms": 4917.4,
+   "server_ms": 4812.9,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 0,
+   "k": 22
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 4580.4,
+   "total_ms": 4580.4,
+   "server_ms": 4475.5,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 0,
+   "k": 23
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 2796.8,
+   "total_ms": 2796.9,
+   "server_ms": 2689.6,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 0,
+   "k": 24
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 2362.0,
+   "total_ms": 2362.0,
+   "server_ms": 2254.1,
+   "rule": "R2_BLUR",
+   "error": null,
+   "session": 0,
+   "k": 25
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 5600.5,
+   "total_ms": 5600.5,
+   "server_ms": 5496.1,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 0,
+   "k": 26
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 6402.9,
+   "total_ms": 6402.9,
+   "server_ms": 6291.7,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 0,
+   "k": 27
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 3475.4,
+   "total_ms": 3475.4,
+   "server_ms": 3342.1,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 0,
+   "k": 28
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 2501.8,
+   "total_ms": 2501.8,
+   "server_ms": 2387.2,
+   "rule": "R2_BLUR",
+   "error": null,
+   "session": 0,
+   "k": 29
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 2717.3,
+   "total_ms": 2717.3,
+   "server_ms": 2591.7,
+   "rule": "R2_BLUR",
+   "error": null,
+   "session": 0,
+   "k": 30
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 2446.3,
+   "total_ms": 2446.3,
+   "server_ms": 2335.2,
+   "rule": "R11_STOP",
+   "error": null,
+   "session": 0,
+   "k": 31
+  },
+  {
+   "route": "/api/approve",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 2036.4,
+   "total_ms": 2036.4,
+   "server_ms": 528.2,
+   "rule": "APPROVAL",
+   "error": null,
+   "session": 0,
+   "k": 32
+  },
+  {
+   "route": "/api/session",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1189.7,
+   "total_ms": 1189.7,
+   "server_ms": 1136.3,
+   "rule": null,
+   "error": null,
+   "session": 1
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 847.7,
+   "total_ms": 847.7,
+   "server_ms": 790.8,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 0
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1131.9,
+   "total_ms": 1132.0,
+   "server_ms": 1063.7,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 1
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1398.3,
+   "total_ms": 1398.3,
+   "server_ms": 1320.4,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 2
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1369.0,
+   "total_ms": 1369.0,
+   "server_ms": 1296.4,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 3
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1171.1,
+   "total_ms": 1171.1,
+   "server_ms": 1087.1,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 4
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1162.0,
+   "total_ms": 1162.0,
+   "server_ms": 1077.2,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 5
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1399.6,
+   "total_ms": 1399.6,
+   "server_ms": 1294.4,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 6
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1544.7,
+   "total_ms": 1544.7,
+   "server_ms": 1460.1,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 7
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1414.1,
+   "total_ms": 1414.1,
+   "server_ms": 1332.2,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 8
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1549.0,
+   "total_ms": 1549.0,
+   "server_ms": 1455.4,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 9
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1613.0,
+   "total_ms": 1613.0,
+   "server_ms": 1526.3,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 10
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1686.4,
+   "total_ms": 1686.4,
+   "server_ms": 1593.3,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 11
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1571.7,
+   "total_ms": 1571.7,
+   "server_ms": 1468.8,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 12
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1519.4,
+   "total_ms": 1519.4,
+   "server_ms": 1432.6,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 13
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1660.7,
+   "total_ms": 1660.7,
+   "server_ms": 1551.4,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 14
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1737.5,
+   "total_ms": 1737.5,
+   "server_ms": 1634.1,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 15
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1308.8,
+   "total_ms": 1308.9,
+   "server_ms": 1213.6,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 16
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1736.4,
+   "total_ms": 1736.5,
+   "server_ms": 1591.4,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 17
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1817.8,
+   "total_ms": 1817.8,
+   "server_ms": 1725.8,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 18
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1900.9,
+   "total_ms": 1900.9,
+   "server_ms": 1675.1,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 19
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 3019.2,
+   "total_ms": 3019.2,
+   "server_ms": 2912.4,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 20
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 2137.0,
+   "total_ms": 2137.1,
+   "server_ms": 2006.4,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 21
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1759.3,
+   "total_ms": 1759.3,
+   "server_ms": 1629.1,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 22
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1966.4,
+   "total_ms": 1966.4,
+   "server_ms": 1855.2,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 23
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1980.1,
+   "total_ms": 1980.1,
+   "server_ms": 1847.7,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 24
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 3198.5,
+   "total_ms": 3198.6,
+   "server_ms": 3071.5,
+   "rule": "R7_OUTLIER",
+   "error": null,
+   "session": 1,
+   "k": 25
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1836.1,
+   "total_ms": 1836.1,
+   "server_ms": 1693.9,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 26
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 2180.3,
+   "total_ms": 2180.3,
+   "server_ms": 2037.4,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 1,
+   "k": 27
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1959.6,
+   "total_ms": 1959.6,
+   "server_ms": 1812.2,
+   "rule": "R11_STOP",
+   "error": null,
+   "session": 1,
+   "k": 28
+  },
+  {
+   "route": "/api/approve",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 2068.9,
+   "total_ms": 2068.9,
+   "server_ms": 521.7,
+   "rule": "APPROVAL",
+   "error": null,
+   "session": 1,
+   "k": 29
+  },
+  {
+   "route": "/api/session",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1104.3,
+   "total_ms": 1104.3,
+   "server_ms": 1063.5,
+   "rule": null,
+   "error": null,
+   "session": 2
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 704.2,
+   "total_ms": 704.2,
+   "server_ms": 635.1,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 0
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1257.0,
+   "total_ms": 1257.0,
+   "server_ms": 1188.0,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 1
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1679.1,
+   "total_ms": 1679.2,
+   "server_ms": 1474.5,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 2
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1998.7,
+   "total_ms": 1998.7,
+   "server_ms": 1914.6,
+   "rule": "R7_OUTLIER",
+   "error": null,
+   "session": 2,
+   "k": 3
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1564.0,
+   "total_ms": 1564.0,
+   "server_ms": 1495.9,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 4
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1717.0,
+   "total_ms": 1717.0,
+   "server_ms": 1621.9,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 5
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1579.5,
+   "total_ms": 1579.5,
+   "server_ms": 1499.2,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 6
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1721.1,
+   "total_ms": 1721.1,
+   "server_ms": 1633.3,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 7
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1616.6,
+   "total_ms": 1616.6,
+   "server_ms": 1511.2,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 8
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1740.5,
+   "total_ms": 1740.5,
+   "server_ms": 1653.3,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 9
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1760.8,
+   "total_ms": 1760.8,
+   "server_ms": 1658.7,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 10
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1621.3,
+   "total_ms": 1621.3,
+   "server_ms": 1518.1,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 11
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1498.3,
+   "total_ms": 1498.3,
+   "server_ms": 1392.7,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 12
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1903.8,
+   "total_ms": 1903.8,
+   "server_ms": 1814.2,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 13
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1818.5,
+   "total_ms": 1818.5,
+   "server_ms": 1709.6,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 14
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1958.7,
+   "total_ms": 1958.7,
+   "server_ms": 1869.1,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 15
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1558.0,
+   "total_ms": 1558.0,
+   "server_ms": 1436.7,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 16
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 2023.5,
+   "total_ms": 2023.5,
+   "server_ms": 1919.0,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 17
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1937.8,
+   "total_ms": 1937.8,
+   "server_ms": 1832.9,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 18
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 2040.6,
+   "total_ms": 2040.6,
+   "server_ms": 1919.9,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 19
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 4581.3,
+   "total_ms": 4581.3,
+   "server_ms": 4459.8,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 20
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 2019.8,
+   "total_ms": 2019.8,
+   "server_ms": 1909.8,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 21
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 2702.5,
+   "total_ms": 2702.6,
+   "server_ms": 2597.2,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 22
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1818.6,
+   "total_ms": 1818.7,
+   "server_ms": 1691.3,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 23
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 2197.9,
+   "total_ms": 2197.9,
+   "server_ms": 2070.9,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 24
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 2103.6,
+   "total_ms": 2103.6,
+   "server_ms": 1976.3,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 25
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 2180.9,
+   "total_ms": 2181.0,
+   "server_ms": 2050.0,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 26
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 2198.5,
+   "total_ms": 2198.5,
+   "server_ms": 2068.1,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 27
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 2281.0,
+   "total_ms": 2281.0,
+   "server_ms": 2153.2,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 28
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 2297.0,
+   "total_ms": 2297.0,
+   "server_ms": 2169.1,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 2,
+   "k": 29
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1584.8,
+   "total_ms": 1584.9,
+   "server_ms": 1473.5,
+   "rule": "R12_BUDGET",
+   "error": null,
+   "session": 2,
+   "k": 30
+  },
+  {
+   "route": "/api/approve",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 830.4,
+   "total_ms": 830.4,
+   "server_ms": 390.2,
+   "rule": "APPROVAL",
+   "error": null,
+   "session": 2,
+   "k": 31
+  },
+  {
+   "route": "/api/session",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1441.6,
+   "total_ms": 1441.6,
+   "server_ms": 1393.0,
+   "rule": null,
+   "error": null,
+   "session": 3
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1100.5,
+   "total_ms": 1100.5,
+   "server_ms": 1028.9,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 3,
+   "k": 0
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1097.1,
+   "total_ms": 1097.1,
+   "server_ms": 1013.2,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 3,
+   "k": 1
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 658.7,
+   "total_ms": 658.8,
+   "server_ms": 598.5,
+   "rule": "R3_GLARE",
+   "error": null,
+   "session": 3,
+   "k": 2
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1058.9,
+   "total_ms": 1058.9,
+   "server_ms": 993.5,
+   "rule": "R2_BLUR",
+   "error": null,
+   "session": 3,
+   "k": 3
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1079.8,
+   "total_ms": 1079.8,
+   "server_ms": 1011.4,
+   "rule": "R3_GLARE",
+   "error": null,
+   "session": 3,
+   "k": 4
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1345.2,
+   "total_ms": 1345.2,
+   "server_ms": 1280.0,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 3,
+   "k": 5
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1114.2,
+   "total_ms": 1114.2,
+   "server_ms": 1036.5,
+   "rule": "R2_BLUR",
+   "error": null,
+   "session": 3,
+   "k": 6
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1361.7,
+   "total_ms": 1361.7,
+   "server_ms": 1282.7,
+   "rule": "R3_GLARE",
+   "error": null,
+   "session": 3,
+   "k": 7
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1218.7,
+   "total_ms": 1218.7,
+   "server_ms": 1129.1,
+   "rule": "R2_BLUR",
+   "error": null,
+   "session": 3,
+   "k": 8
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 905.0,
+   "total_ms": 905.0,
+   "server_ms": 818.1,
+   "rule": "R3_GLARE",
+   "error": null,
+   "session": 3,
+   "k": 9
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1564.1,
+   "total_ms": 1564.1,
+   "server_ms": 1492.6,
+   "rule": "R5_OFF_TARGET",
+   "error": null,
+   "session": 3,
+   "k": 10
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1390.4,
+   "total_ms": 1390.4,
+   "server_ms": 1289.7,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 3,
+   "k": 11
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1144.1,
+   "total_ms": 1144.1,
+   "server_ms": 1055.5,
+   "rule": "R3_GLARE",
+   "error": null,
+   "session": 3,
+   "k": 12
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1555.2,
+   "total_ms": 1555.2,
+   "server_ms": 1458.0,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 3,
+   "k": 13
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1422.1,
+   "total_ms": 1422.1,
+   "server_ms": 1313.2,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 3,
+   "k": 14
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1081.8,
+   "total_ms": 1081.8,
+   "server_ms": 995.5,
+   "rule": "R2_BLUR",
+   "error": null,
+   "session": 3,
+   "k": 15
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1277.0,
+   "total_ms": 1277.0,
+   "server_ms": 1191.7,
+   "rule": "R2_BLUR",
+   "error": null,
+   "session": 3,
+   "k": 16
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1222.1,
+   "total_ms": 1222.1,
+   "server_ms": 1132.1,
+   "rule": "R2_BLUR",
+   "error": null,
+   "session": 3,
+   "k": 17
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1143.7,
+   "total_ms": 1143.7,
+   "server_ms": 1054.9,
+   "rule": "R3_GLARE",
+   "error": null,
+   "session": 3,
+   "k": 18
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1458.0,
+   "total_ms": 1458.0,
+   "server_ms": 1351.7,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 3,
+   "k": 19
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1662.1,
+   "total_ms": 1662.1,
+   "server_ms": 1572.3,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 3,
+   "k": 20
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1018.3,
+   "total_ms": 1018.3,
+   "server_ms": 929.8,
+   "rule": "R2_BLUR",
+   "error": null,
+   "session": 3,
+   "k": 21
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1557.2,
+   "total_ms": 1557.2,
+   "server_ms": 1450.9,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 3,
+   "k": 22
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1720.0,
+   "total_ms": 1720.0,
+   "server_ms": 1633.3,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 3,
+   "k": 23
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 3338.4,
+   "total_ms": 3338.4,
+   "server_ms": 3233.6,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 3,
+   "k": 24
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1863.1,
+   "total_ms": 1863.1,
+   "server_ms": 1749.2,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 3,
+   "k": 25
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1797.5,
+   "total_ms": 1797.5,
+   "server_ms": 1670.8,
+   "rule": "R2_BLUR",
+   "error": null,
+   "session": 3,
+   "k": 26
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 2020.2,
+   "total_ms": 2020.2,
+   "server_ms": 1899.7,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 3,
+   "k": 27
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1462.2,
+   "total_ms": 1462.2,
+   "server_ms": 1352.7,
+   "rule": "R2_BLUR",
+   "error": null,
+   "session": 3,
+   "k": 28
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1221.0,
+   "total_ms": 1221.0,
+   "server_ms": 1111.3,
+   "rule": "R2_BLUR",
+   "error": null,
+   "session": 3,
+   "k": 29
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1774.3,
+   "total_ms": 1774.3,
+   "server_ms": 1663.3,
+   "rule": "R2_BLUR",
+   "error": null,
+   "session": 3,
+   "k": 30
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1899.0,
+   "total_ms": 1899.0,
+   "server_ms": 1778.3,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 3,
+   "k": 31
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1982.7,
+   "total_ms": 1982.7,
+   "server_ms": 1856.4,
+   "rule": "R5_OFF_TARGET",
+   "error": null,
+   "session": 3,
+   "k": 32
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 877.9,
+   "total_ms": 877.9,
+   "server_ms": 749.3,
+   "rule": "R2_BLUR",
+   "error": null,
+   "session": 3,
+   "k": 33
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 862.0,
+   "total_ms": 862.0,
+   "server_ms": 750.2,
+   "rule": "R2_BLUR",
+   "error": null,
+   "session": 3,
+   "k": 34
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1324.1,
+   "total_ms": 1324.2,
+   "server_ms": 1216.0,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 3,
+   "k": 35
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1336.5,
+   "total_ms": 1336.5,
+   "server_ms": 1205.7,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 3,
+   "k": 36
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1397.0,
+   "total_ms": 1397.0,
+   "server_ms": 1268.6,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 3,
+   "k": 37
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1000.5,
+   "total_ms": 1000.5,
+   "server_ms": 881.3,
+   "rule": "R2_BLUR",
+   "error": null,
+   "session": 3,
+   "k": 38
+  },
+  {
+   "route": "/api/step",
+   "ok": true,
+   "status": 200,
+   "statuses": [
+    200
+   ],
+   "tries": 1,
+   "client_ms": 1400.5,
+   "total_ms": 1400.5,
+   "server_ms": 1278.4,
+   "rule": "R13_NBV",
+   "error": null,
+   "session": 3,
+   "k": 39
+  }
+ ]
+}

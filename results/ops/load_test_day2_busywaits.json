@@ -1,0 +1,154 @@
+{
+ "url": "https://t4zn85l054.execute-api.ap-southeast-1.amazonaws.com",
+ "mode": "sim",
+ "sessions": 10,
+ "steps_per_session": 10,
+ "concurrency": 10,
+ "presets": [
+  "drone_survey_cam",
+  "inspection_gauge_cam",
+  "phone_crack_metrology",
+  "wide_robot_handheld"
+ ],
+ "wall_s": 76.3,
+ "http_responses": 322,
+ "rate_429": 0.5932,
+ "rate_503": 0.0652,
+ "logical_requests": 129,
+ "logical_failures": 19,
+ "busy_waits": 6,
+ "sessions_failed": 0,
+ "sessions_failed_at_start": 0,
+ "session_failure_rate": 0.0,
+ "routes": {
+  "/api/session": {
+   "requests": 13,
+   "ok": 10,
+   "failed": 3,
+   "http_responses": 36,
+   "http_429": 12,
+   "http_503": 14,
+   "http_5xx_other": 0,
+   "network_errors": 0,
+   "retried": 7,
+   "retried_then_ok": 4,
+   "client_ms_p50": 2810.8,
+   "client_ms_p95": 3191.1,
+   "client_ms_max": 3192.4,
+   "with_retries_ms_p95": 9312.8,
+   "server_ms_p50": 1643.7,
+   "server_ms_p95": 3145.3,
+   "server_ms_max": 3171.7
+  },
+  "/api/step": {
+   "requests": 116,
+   "ok": 100,
+   "failed": 16,
+   "http_responses": 286,
+   "http_429": 179,
+   "http_503": 7,
+   "http_5xx_other": 0,
+   "network_errors": 0,
+   "retried": 70,
+   "retried_then_ok": 54,
+   "client_ms_p50": 1459.4,
+   "client_ms_p95": 3935.3,
+   "client_ms_max": 4661.1,
+   "with_retries_ms_p95": 6843.9,
+   "server_ms_p50": 1374.7,
+   "server_ms_p95": 3858.9,
+   "server_ms_max": 4580.2
+  }
+ },
+ "session_results": [
+  {
+   "session": 0,
+   "preset": "wide_robot_handheld",
+   "calls": 10,
+   "status": "continue",
+   "error": null,
+   "busy_waits": 0
+  },
+  {
+   "session": 1,
+   "preset": "inspection_gauge_cam",
+   "calls": 10,
+   "status": "continue",
+   "error": null,
+   "busy_waits": 0
+  },
+  {
+   "session": 2,
+   "preset": "drone_survey_cam",
+   "calls": 13,
+   "status": "continue",
+   "error": null,
+   "busy_waits": 4
+  },
+  {
+   "session": 3,
+   "preset": "phone_crack_metrology",
+   "calls": 11,
+   "status": "continue",
+   "error": null,
+   "busy_waits": 1
+  },
+  {
+   "session": 4,
+   "preset": "wide_robot_handheld",
+   "calls": 13,
+   "status": "continue",
+   "error": null,
+   "busy_waits": 3
+  },
+  {
+   "session": 5,
+   "preset": "inspection_gauge_cam",
+   "calls": 12,
+   "status": "continue",
+   "error": null,
+   "busy_waits": 2
+  },
+  {
+   "session": 6,
+   "preset": "drone_survey_cam",
+   "calls": 12,
+   "status": "continue",
+   "error": null,
+   "busy_waits": 2
+  },
+  {
+   "session": 7,
+   "preset": "phone_crack_metrology",
+   "calls": 12,
+   "status": "continue",
+   "error": null,
+   "busy_waits": 2
+  },
+  {
+   "session": 8,
+   "preset": "wide_robot_handheld",
+   "calls": 11,
+   "status": "continue",
+   "error": null,
+   "busy_waits": 3
+  },
+  {
+   "session": 9,
+   "preset": "inspection_gauge_cam",
+   "calls": 12,
+   "status": "continue",
+   "error": null,
+   "busy_waits": 2
+  }
+ ],
+ "rules": {
+  "R0_NO_BOARD": 3,
+  "R13_NBV": 76,
+  "R2_BLUR": 13,
+  "R3_GLARE": 4,
+  "R5_OFF_TARGET": 1,
+  "R7_OUTLIER": 3
+ },
+ "utc": "2026-10-23T03:35:41Z"
+}

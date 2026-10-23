@@ -1,0 +1,323 @@
+1
+00:00:00,500 --> 00:00:03,640
+NextView: an agent that calibrates a camera by
+
+2
+00:00:03,660 --> 00:00:06,470
+deciding where the calibration board should go next.
+
+3
+00:00:07,533 --> 00:00:09,793
+A solo entry by Umar Mohktar, Singapore:
+
+4
+00:00:10,453 --> 00:00:12,963
+design, implementation and evaluation.
+
+5
+00:00:14,167 --> 00:00:17,187
+Calibration is step zero of every metric inspection,
+
+6
+00:00:17,207 --> 00:00:19,307
+and its usual check misleads.
+
+7
+00:00:19,847 --> 00:00:20,807
+After a few views,
+
+8
+00:00:21,087 --> 00:00:23,587
+the in-sample error is under a tenth of a pixel,
+
+9
+00:00:23,767 --> 00:00:26,957
+while the true error at the image edges is many pixels.
+
+10
+00:00:27,433 --> 00:00:29,173
+This is the live app on AWS.
+
+11
+00:00:29,773 --> 00:00:32,983
+The camera is simulated, so the true error is known.
+
+12
+00:00:33,201 --> 00:00:35,241
+Each step checks the frame and rejects
+
+13
+00:00:35,261 --> 00:00:37,121
+bad ones with a measured reason,
+
+14
+00:00:37,441 --> 00:00:40,121
+such as blur in pixels on the board's own edges,
+
+15
+00:00:40,501 --> 00:00:43,811
+then gives a numeric instruction and a ghost outline.
+
+16
+00:00:43,997 --> 00:00:45,897
+Candidate poses are ranked by the
+
+17
+00:00:45,917 --> 00:00:47,437
+predicted drop in uncertainty,
+
+18
+00:00:47,837 --> 00:00:49,483
+and each capture reports what it actually achieved.
+
+19
+00:00:49,533 --> 00:00:51,573
+When the residuals show a radial trend,
+
+20
+00:00:51,933 --> 00:00:54,513
+the agent asks before it changes the lens model.
+
+21
+00:00:55,053 --> 00:00:58,383
+Deny, and the model stays pinned while the plan continues.
+
+22
+00:01:01,833 --> 00:01:03,483
+Restart with the same seed.
+
+23
+00:01:09,644 --> 00:01:11,383
+This time, approve, and it refits with the rational model.
+
+24
+00:01:11,433 --> 00:01:13,553
+The race chart compares the true error with
+
+25
+00:01:13,573 --> 00:01:15,573
+random poses on the same camera.
+
+26
+00:01:16,113 --> 00:01:19,773
+It is one session, and the baseline keeps the k5 lens model,
+
+27
+00:01:20,013 --> 00:01:22,283
+so part of the gap is the model switch.
+
+28
+00:01:22,550 --> 00:01:24,330
+It stops when the calibrated chance of
+
+29
+00:01:24,350 --> 00:01:28,570
+exceeding 0.75 pixels drops below ten percent.
+
+30
+00:01:29,430 --> 00:01:32,930
+Export needs approval too, and returns OpenCV YAML,
+
+31
+00:01:33,210 --> 00:01:35,660
+a report card and a JSON record.
+
+32
+00:01:36,733 --> 00:01:39,993
+The webcam tab runs the same agent on browser frames;
+
+33
+00:01:40,473 --> 00:01:43,393
+here, a virtual camera plays a rendered board video.
+
+34
+00:01:43,973 --> 00:01:45,403
+Frames are never stored.
+
+35
+00:01:50,100 --> 00:01:54,000
+It runs as one stateless Lambda container behind API Gateway,
+
+36
+00:01:54,320 --> 00:01:56,340
+with session state in a signed token.
+
+37
+00:01:57,180 --> 00:02:00,860
+Traces go to CloudWatch, approved exports to private S3,
+
+38
+00:02:01,280 --> 00:02:04,870
+and a median step takes 1.4 seconds on the server.
+
+39
+00:02:06,133 --> 00:02:08,073
+The Evidence tab serves the benchmark's
+
+40
+00:02:08,093 --> 00:02:09,633
+figures and headline numbers,
+
+41
+00:02:09,653 --> 00:02:11,823
+baked into the deployed image.
+
+42
+00:02:13,033 --> 00:02:16,353
+In a pre-registered benchmark on 100 simulated test cameras,
+
+43
+00:02:16,733 --> 00:02:19,013
+all eight primary endpoints favour the agent.
+
+44
+00:02:19,693 --> 00:02:23,753
+After ten frames, the median true error is 1.21 pixels
+
+45
+00:02:24,293 --> 00:02:27,673
+against 2.71 for random poses with a robot,
+
+46
+00:02:28,093 --> 00:02:31,963
+and 1.22 against 3.61 with a human.
+
+47
+00:02:33,000 --> 00:02:35,260
+The agent gets below one pixel in a
+
+48
+00:02:35,280 --> 00:02:37,440
+median of 8 frames with a robot;
+
+49
+00:02:38,020 --> 00:02:41,230
+the median random-pose run does not get there within 30.
+
+50
+00:02:42,267 --> 00:02:43,967
+Taking parts out one at a time:
+
+51
+00:02:44,327 --> 00:02:46,227
+the planner, outlier dropping and,
+
+52
+00:02:46,247 --> 00:02:48,787
+on wide lenses, the model switch all help.
+
+53
+00:02:49,327 --> 00:02:51,227
+The perception gate adds no accuracy,
+
+54
+00:02:51,247 --> 00:02:54,697
+and costs a human 18 attempts instead of 10.
+
+55
+00:02:55,700 --> 00:02:57,540
+The uncertainty map is optimistic,
+
+56
+00:02:57,940 --> 00:03:00,800
+so the stop rule is calibrated on separate cameras.
+
+57
+00:03:01,480 --> 00:03:06,740
+190 of 300 robot runs stopped, none above 1.5 pixels,
+
+58
+00:03:07,160 --> 00:03:09,310
+but telephoto runs never stopped.
+
+59
+00:03:10,333 --> 00:03:13,653
+On real D455 images from the METRIC dataset,
+
+60
+00:03:14,153 --> 00:03:16,013
+the agent is not consistently better
+
+61
+00:03:16,033 --> 00:03:18,313
+than random frame choices:
+
+62
+00:03:18,333 --> 00:03:20,413
+it ranks between the 2nd and 84th
+
+63
+00:03:20,433 --> 00:03:23,083
+percentile of 100 random draws.
+
+64
+00:03:24,200 --> 00:03:27,300
+At one metre, a 100 mm segment near the image edge is
+
+65
+00:03:27,320 --> 00:03:30,980
+off by a median 0.047 mm after ten frames,
+
+66
+00:03:31,000 --> 00:03:35,840
+against 0.12 to 0.17 mm for random poses.
+
+67
+00:03:35,860 --> 00:03:40,180
+On wide lenses, though, before the lens-model switch,
+
+68
+00:03:40,620 --> 00:03:42,100
+the agent's worst segments near the
+
+69
+00:03:42,120 --> 00:03:45,060
+corners are off by 25.9 mm,
+
+70
+00:03:45,300 --> 00:03:47,970
+against 5.7 mm for a dense grid.
+
+71
+00:03:48,933 --> 00:03:54,513
+Over MCP, a local Qwen 2.5 7B model drove the same tools:
+
+72
+00:03:55,093 --> 00:03:56,533
+10 of 10 sessions finished,
+
+73
+00:03:56,893 --> 00:03:59,033
+98 percent of calls were valid,
+
+74
+00:03:59,053 --> 00:04:00,703
+and its error matched the planner's.
+
+75
+00:04:01,833 --> 00:04:04,953
+Failures are evidence too: across 60 fisheye,
+
+76
+00:04:05,113 --> 00:04:07,413
+autofocus-drift and warped-board runs,
+
+77
+00:04:07,713 --> 00:04:09,843
+the agent never issued a clean stop.
+
+78
+00:04:10,933 --> 00:04:14,173
+NextView is decision support, not certified metrology.
+
+79
+00:04:14,953 --> 00:04:16,833
+Primary results are simulator-graded,
+
+80
+00:04:17,273 --> 00:04:18,933
+webcam frames are never stored,
+
+81
+00:04:19,233 --> 00:04:21,183
+and the trace is the audit record.

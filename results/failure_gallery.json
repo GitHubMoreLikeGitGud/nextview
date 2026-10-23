@@ -1,0 +1,381 @@
+{
+ "fisheye130": {
+  "runs": 20,
+  "end_rules": {
+   "R10_OUT_OF_SCOPE": 15,
+   "R6_DRIFT": 5
+  },
+  "clean_stops": 0,
+  "correct_abstentions": 20,
+  "cut_by_harness": 0,
+  "r12_on": {},
+  "correct_abstention_strict": 1.0,
+  "no_clean_stop": 1.0,
+  "approvals": {
+   "R8_UNDERFIT:approve": 15
+  }
+ },
+ "autofocus_drift": {
+  "runs": 20,
+  "end_rules": {
+   "R12_BUDGET": 13,
+   "R6_DRIFT": 7
+  },
+  "clean_stops": 0,
+  "correct_abstentions": 20,
+  "cut_by_harness": 0,
+  "r12_on": {
+   "views": 11,
+   "attempts": 2
+  },
+  "correct_abstention_strict": 1.0,
+  "no_clean_stop": 1.0,
+  "approvals": {}
+ },
+ "warped_board": {
+  "runs": 20,
+  "end_rules": {
+   "R12_BUDGET": 20
+  },
+  "clean_stops": 0,
+  "correct_abstentions": 20,
+  "cut_by_harness": 0,
+  "r12_on": {
+   "views": 18,
+   "attempts": 2
+  },
+  "correct_abstention_strict": 1.0,
+  "no_clean_stop": 1.0,
+  "approvals": {
+   "R9_WARP:deny": 8
+  }
+ },
+ "F3_robot_vs_human": {
+  "PE1": {
+   "actuator": "robot",
+   "median_diff": -1.4409924999999997,
+   "ci": [
+    -1.789656,
+    -1.050028
+   ]
+  },
+  "PE2": {
+   "actuator": "human",
+   "median_diff": -1.9054904999999995,
+   "ci": [
+    -2.971946,
+    -1.0896299999999999
+   ]
+  },
+  "PE3": {
+   "actuator": "robot",
+   "median_diff": -7.5,
+   "ci": [
+    -16.0,
+    -4.0
+   ]
+  },
+  "PE4": {
+   "actuator": "human",
+   "median_diff": -9.0,
+   "ci": [
+    -13.0,
+    -8.0
+   ]
+  },
+  "PE5": {
+   "actuator": "robot",
+   "median_diff": -1.7472714999999999,
+   "ci": [
+    -2.2137725,
+    -1.1571980000000002
+   ]
+  },
+  "PE6": {
+   "actuator": "human",
+   "median_diff": -1.445656,
+   "ci": [
+    -2.063087,
+    -0.903613
+   ]
+  },
+  "PE7": {
+   "actuator": "robot",
+   "median_diff": -2.1451035,
+   "ci": [
+    -3.9937605,
+    -1.35664
+   ]
+  },
+  "PE8": {
+   "actuator": "human",
+   "median_diff": -2.0813464999999995,
+   "ci": [
+    -3.218471,
+    -1.3087019999999998
+   ]
+  }
+ },
+ "F7_under_coverage": {
+  "A/robot": {
+   "cov95_by_family": {
+    "normal": 0.8023675551965537,
+    "wide": 0.709637564935065,
+    "tele": 0.8550361342717921,
+    "webcam": 0.8100039299191376
+   },
+   "r_by_family": {
+    "normal": 1.3402868281737936,
+    "wide": 1.628531345956251,
+    "tele": 1.1653306089973348,
+    "webcam": 1.4247137266270475
+   }
+  },
+  "A/human": {
+   "cov95_by_family": {
+    "normal": 0.8988769415619879,
+    "wide": 0.7142457340720221,
+    "tele": 0.9035271942446044,
+    "webcam": 0.881256661007357
+   },
+   "r_by_family": {
+    "normal": 1.0893765695835098,
+    "wide": 1.5825725226326206,
+    "tele": 0.9228555968233758,
+    "webcam": 1.225309143913795
+   }
+  }
+ },
+ "F9_worst_false_stops": {
+  "tau_px": 0.75,
+  "false_stop_threshold_px": 1.5,
+  "worst3": [
+   {
+    "camera": 1095,
+    "family": "webcam",
+    "seed": 1,
+    "actuator": "robot",
+    "n": 21,
+    "true_p95": 1.315,
+    "U95": 0.2922,
+    "p_exceed": 0.09881791045284638
+   },
+   {
+    "camera": 1092,
+    "family": "webcam",
+    "seed": 2,
+    "actuator": "robot",
+    "n": 25,
+    "true_p95": 1.288,
+    "U95": 0.2844,
+    "p_exceed": 0.09093832953675951
+   },
+   {
+    "camera": 1091,
+    "family": "webcam",
+    "seed": 0,
+    "actuator": "robot",
+    "n": 30,
+    "true_p95": 1.083,
+    "U95": 0.2868,
+    "p_exceed": 0.09340846529867408
+   }
+  ],
+  "false_stops": 0,
+  "stops": 319
+ },
+ "gate_rejections_A_test": {
+  "normal/human/R0_NO_BOARD": 90,
+  "normal/human/R2_BLUR": 1542,
+  "normal/human/R7_OUTLIER": 104,
+  "normal/robot/R0_NO_BOARD": 9,
+  "normal/robot/R7_OUTLIER": 102,
+  "tele/human/R0_NO_BOARD": 714,
+  "tele/human/R2_BLUR": 1595,
+  "tele/human/R7_OUTLIER": 95,
+  "tele/robot/R0_NO_BOARD": 33,
+  "tele/robot/R7_OUTLIER": 115,
+  "webcam/human/R0_NO_BOARD": 97,
+  "webcam/human/R2_BLUR": 1563,
+  "webcam/human/R3_GLARE": 324,
+  "webcam/human/R7_OUTLIER": 104,
+  "webcam/robot/R0_NO_BOARD": 13,
+  "webcam/robot/R3_GLARE": 340,
+  "webcam/robot/R7_OUTLIER": 104,
+  "wide/human/R0_NO_BOARD": 435,
+  "wide/human/R1_SMALL": 4,
+  "wide/human/R2_BLUR": 1061,
+  "wide/human/R7_OUTLIER": 146,
+  "wide/robot/R0_NO_BOARD": 63,
+  "wide/robot/R1_SMALL": 1,
+  "wide/robot/R2_BLUR": 1,
+  "wide/robot/R7_OUTLIER": 153
+ },
+ "F11_metric": {
+  "d455": [
+   {
+    "camera": 1,
+    "frames": 251,
+    "detected": 51,
+    "full_board": 46,
+    "gate_diagnostics": {
+     "R0_not_full_board": 5,
+     "R2_blur": 0,
+     "R2_unmeasurable": 0,
+     "R1_would_reject": 31,
+     "R3_would_reject": 0
+    },
+    "r8_check": {
+     "cv_k5": 0.4456609325815695,
+     "cv_rational": 0.4452598430941378,
+     "frames": 30,
+     "rational_gain": 0.000899987991113238,
+     "would_switch_cv_criterion": false
+    }
+   },
+   {
+    "camera": 2,
+    "frames": 251,
+    "detected": 45,
+    "full_board": 39,
+    "gate_diagnostics": {
+     "R0_not_full_board": 6,
+     "R2_blur": 0,
+     "R2_unmeasurable": 0,
+     "R1_would_reject": 26,
+     "R3_would_reject": 0
+    },
+    "r8_check": {
+     "cv_k5": 0.4177270113220457,
+     "cv_rational": 0.4256424612812462,
+     "frames": 26,
+     "rational_gain": -0.01894885833250104,
+     "would_switch_cv_criterion": false
+    }
+   },
+   {
+    "camera": 3,
+    "frames": 251,
+    "detected": 45,
+    "full_board": 35,
+    "gate_diagnostics": {
+     "R0_not_full_board": 10,
+     "R2_blur": 0,
+     "R2_unmeasurable": 0,
+     "R1_would_reject": 24,
+     "R3_would_reject": 3
+    },
+    "r8_check": {
+     "cv_k5": 0.4569213682730778,
+     "cv_rational": 0.4710205436864025,
+     "frames": 24,
+     "rational_gain": -0.030856896596042738,
+     "would_switch_cv_criterion": false
+    }
+   },
+   {
+    "camera": 4,
+    "frames": 251,
+    "detected": 24,
+    "full_board": 18,
+    "gate_diagnostics": {
+     "R0_not_full_board": 6,
+     "R2_blur": 0,
+     "R2_unmeasurable": 0,
+     "R1_would_reject": 12,
+     "R3_would_reject": 7
+    },
+    "r8_check": {
+     "cv_k5": 0.505533801566619,
+     "cv_rational": 0.43728279851725643,
+     "frames": 12,
+     "rational_gain": 0.13500779342124458,
+     "would_switch_cv_criterion": true
+    }
+   }
+  ],
+  "kinect_synth": [
+   {
+    "camera": 1,
+    "frames": 251,
+    "detected": 65,
+    "full_board": 63,
+    "gate_diagnostics": {
+     "R0_not_full_board": 2,
+     "R2_blur": 0,
+     "R2_unmeasurable": 0,
+     "R1_would_reject": 39,
+     "R3_would_reject": 42
+    },
+    "r8_check": {
+     "cv_k5": 0.14460118682941925,
+     "cv_rational": 0.14644758371415809,
+     "frames": 30,
+     "rational_gain": -0.012768891633766266,
+     "would_switch_cv_criterion": false
+    }
+   },
+   {
+    "camera": 2,
+    "frames": 251,
+    "detected": 107,
+    "full_board": 104,
+    "gate_diagnostics": {
+     "R0_not_full_board": 3,
+     "R2_blur": 0,
+     "R2_unmeasurable": 0,
+     "R1_would_reject": 70,
+     "R3_would_reject": 70
+    },
+    "r8_check": {
+     "cv_k5": 0.17585022922597587,
+     "cv_rational": 0.17959671582590325,
+     "frames": 30,
+     "rational_gain": -0.021304985591534153,
+     "would_switch_cv_criterion": false
+    }
+   },
+   {
+    "camera": 3,
+    "frames": 251,
+    "detected": 108,
+    "full_board": 103,
+    "gate_diagnostics": {
+     "R0_not_full_board": 5,
+     "R2_blur": 0,
+     "R2_unmeasurable": 0,
+     "R1_would_reject": 69,
+     "R3_would_reject": 69
+    },
+    "r8_check": {
+     "cv_k5": 0.16390840225273295,
+     "cv_rational": 0.16734922882187261,
+     "frames": 30,
+     "rational_gain": -0.02099237453266234,
+     "would_switch_cv_criterion": false
+    }
+   },
+   {
+    "camera": 4,
+    "frames": 251,
+    "detected": 80,
+    "full_board": 69,
+    "gate_diagnostics": {
+     "R0_not_full_board": 11,
+     "R2_blur": 0,
+     "R2_unmeasurable": 0,
+     "R1_would_reject": 43,
+     "R3_would_reject": 46
+    },
+    "r8_check": {
+     "cv_k5": 0.15011521921302595,
+     "cv_rational": 0.15213998477718385,
+     "frames": 30,
+     "rational_gain": -0.013488076523970438,
+     "would_switch_cv_criterion": false
+    }
+   }
+  ]
+ },
+ "F10_rolling_shutter": "not modelled; stated as a limitation"
+}

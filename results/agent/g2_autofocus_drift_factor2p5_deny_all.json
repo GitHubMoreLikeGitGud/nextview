@@ -1,0 +1,128 @@
+{
+ "opencv": "5.0.0",
+ "threads": 1,
+ "sessions": [
+  {
+   "preset": "autofocus_drift",
+   "family": "webcam",
+   "actuator": "human",
+   "camera_seed": 0,
+   "seed": 0,
+   "approval_policy": "deny_all",
+   "stop_calibration": "uncalibrated (P_exceed = NaN)",
+   "calls": 44,
+   "capture_steps": 42,
+   "approvals": [
+    "R6_DRIFT:drift_restart->deny@15",
+    "R12_BUDGET:accept_with_warnings->approve@43"
+   ],
+   "accepted_frames": 32,
+   "views_final": 30,
+   "rejected": {
+    "R7_OUTLIER": 2,
+    "R2_BLUR": 9,
+    "R0_NO_BOARD": 1
+   },
+   "decision": {
+    "rule": "R12_BUDGET",
+    "kind": "accept_with_warnings",
+    "status": "escalated",
+    "step": 43
+   },
+   "final_status": "exported",
+   "model": {
+    "name": "k5",
+    "pinned": false
+   },
+   "final_U95_px": 0.5234,
+   "final_p_exceed": null,
+   "final_true_p95_px": 4.8527,
+   "fx_rel_err_pct": 0.5029,
+   "baseline": {
+    "views": 30,
+    "truth": {
+     "field_p95_px": 7.1769,
+     "field_mean_px": 4.1862
+    }
+   },
+   "slowest_call_ms": 434.3,
+   "slowest_call": {
+    "step": 12,
+    "rule": "R13_NBV",
+    "tools": [
+     {
+      "tool": "calibrate",
+      "ms": 8.1,
+      "reason": "rebuild"
+     },
+     {
+      "tool": "sim_capture",
+      "ms": 289.6
+     },
+     {
+      "tool": "detect_board",
+      "ms": 25.3
+     },
+     {
+      "tool": "assess_frame",
+      "ms": 36.2
+     },
+     {
+      "tool": "estimate_pose",
+      "ms": 0.2
+     },
+     {
+      "tool": "prequential",
+      "ms": 0.1
+     },
+     {
+      "tool": "calibrate",
+      "ms": 9.8
+     },
+     {
+      "tool": "residual_analysis",
+      "ms": 0.7
+     },
+     {
+      "tool": "uncertainty_map",
+      "ms": 0.5
+     },
+     {
+      "tool": "propose_next_views",
+      "ms": 14.0,
+      "n_candidates": 296,
+      "n_sampled": 300,
+      "n_feasible": 296,
+      "u95_now": 0.5404,
+      "deadline_hit": false,
+      "full_board_only": false
+     },
+     {
+      "tool": "truth",
+      "ms": 2.7
+     },
+     {
+      "tool": "baseline",
+      "ms": 46.0
+     }
+    ]
+   },
+   "median_call_ms": 187.4,
+   "max_token_bytes": 30462,
+   "flags": [
+    "DRIFT"
+   ],
+   "trace_tail": [
+    "#39 R13_NBV: largest \u03c3 bottom-right 0.68 px, U95 0.57 px, P(>\u03c4)=n/a \u2192 target left, tilt 20\u00b0 az 270\u00b0 (predicted \u0394U95 0.022 px)",
+    "#40 R13_NBV: largest \u03c3 bottom-right 0.67 px, U95 0.56 px, P(>\u03c4)=n/a \u2192 target left, tilt 20\u00b0 az 225\u00b0 (predicted \u0394U95 0.021 px)",
+    "#41 R2_BLUR: edge rise 5.83 px > 3.0 px, anisotropy 2.16, blur along 157\u00b0 \u2192 reject",
+    "#42 R13_NBV: largest \u03c3 bottom-right 0.65 px, U95 0.54 px, P(>\u03c4)=n/a \u2192 target left, tilt 20\u00b0 az 225\u00b0 (predicted \u0394U95 0.019 px)",
+    "#43 R12_BUDGET: 30/30 views, U95 0.52 px, P(>\u03c4) n/a (uncalibrated), open flags ['DRIFT'] \u2192 escalate",
+    "#44 APPROVAL ap_2 accept_with_warnings: approve (auto deny_all) \u2192 export with warnings"
+   ],
+   "threshold_overrides": {
+    "drift_factor": 2.5
+   }
+  }
+ ]
+}

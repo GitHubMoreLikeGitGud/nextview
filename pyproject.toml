@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nextview"
+version = "0.1.0"
+description = "Next-best-view camera calibration agent built on OpenCV 5."
+readme = { text = "NextView: an agent that decides where the calibration board should go next.", content-type = "text/plain" }
+license = { text = "MIT" }
+authors = [{ name = "Umar Mohktar" }]
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "opencv-python-headless==5.0.0.93",
+    "numpy==2.5.1",
+]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"nextview.lambda_app" = ["web/*", "evidence/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = '-m "not slow and not live"'

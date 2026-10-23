@@ -1,0 +1,210 @@
+{
+ "opencv": "5.0.0",
+ "threads": 1,
+ "sessions": [
+  {
+   "preset": "wide_robot_handheld",
+   "family": "wide",
+   "actuator": "human",
+   "camera_seed": 0,
+   "seed": 0,
+   "approval_policy": "deny_all",
+   "stop_calibration": "uncalibrated (P_exceed = NaN)",
+   "calls": 53,
+   "capture_steps": 51,
+   "approvals": [
+    "R8_UNDERFIT:switch_model->deny@15",
+    "R12_BUDGET:accept_with_warnings->approve@52"
+   ],
+   "accepted_frames": 34,
+   "views_final": 30,
+   "rejected": {
+    "R7_OUTLIER": 4,
+    "R0_NO_BOARD": 10,
+    "R2_BLUR": 7
+   },
+   "decision": {
+    "rule": "R12_BUDGET",
+    "kind": "accept_with_warnings",
+    "status": "escalated",
+    "step": 52
+   },
+   "final_status": "exported",
+   "model": {
+    "name": "k5",
+    "pinned": true
+   },
+   "final_U95_px": 0.4056,
+   "final_p_exceed": null,
+   "final_true_p95_px": 4.6954,
+   "fx_rel_err_pct": 0.2443,
+   "baseline": {
+    "views": 30,
+    "truth": {
+     "field_p95_px": 6.6819,
+     "field_mean_px": 3.7651
+    }
+   },
+   "slowest_call_ms": 911.9,
+   "slowest_call": {
+    "step": 1,
+    "rule": "R13_NBV",
+    "tools": [
+     {
+      "tool": "sim_capture",
+      "ms": 806.5
+     },
+     {
+      "tool": "detect_board",
+      "ms": 25.2
+     },
+     {
+      "tool": "assess_frame",
+      "ms": 44.4
+     },
+     {
+      "tool": "estimate_pose",
+      "ms": 0.3
+     },
+     {
+      "tool": "truth",
+      "ms": 0.0
+     },
+     {
+      "tool": "baseline",
+      "ms": 34.4
+     }
+    ]
+   },
+   "median_call_ms": 209.1,
+   "max_token_bytes": 30947,
+   "flags": [],
+   "trace_tail": [
+    "#49 R0_NO_BOARD: 0 corners over 0\u00d70 rows\u00d7cols (need 12, \u22652\u00d72) \u2192 reject, next candidate (rank 2): centre, tilt 50\u00b0 az 135\u00b0",
+    "#50 R5_OFF_TARGET: realised pose 20\u00b0 and 3% of the width from target \u2192 accept, re-plan from the new view",
+    "#50 R13_NBV: largest \u03c3 bottom-right 3.72 px, U95 0.42 px, P(>\u03c4)=n/a \u2192 target right, tilt 50\u00b0 az 90\u00b0 (predicted \u0394U95 0.016 px)",
+    "#51 R0_NO_BOARD: 6 corners over 3\u00d72 rows\u00d7cols (need 12, \u22652\u00d72) \u2192 reject, next candidate (rank 2): centre, tilt 50\u00b0 az 315\u00b0",
+    "#52 R12_BUDGET: 30/30 views, U95 0.41 px, P(>\u03c4) n/a (uncalibrated) \u2192 escalate",
+    "#53 APPROVAL ap_2 accept_with_warnings: approve (auto deny_all) \u2192 export with warnings"
+   ],
+   "threshold_overrides": {}
+  },
+  {
+   "preset": "fisheye_out_of_scope",
+   "family": "fisheye130",
+   "actuator": "robot",
+   "camera_seed": 0,
+   "seed": 0,
+   "approval_policy": "deny_all",
+   "stop_calibration": "uncalibrated (P_exceed = NaN)",
+   "calls": 36,
+   "capture_steps": 34,
+   "approvals": [
+    "R8_UNDERFIT:switch_model->deny@14",
+    "R12_BUDGET:accept_with_warnings->approve@35"
+   ],
+   "accepted_frames": 31,
+   "views_final": 30,
+   "rejected": {
+    "R7_OUTLIER": 1,
+    "R0_NO_BOARD": 3
+   },
+   "decision": {
+    "rule": "R12_BUDGET",
+    "kind": "accept_with_warnings",
+    "status": "escalated",
+    "step": 35
+   },
+   "final_status": "exported",
+   "model": {
+    "name": "k5",
+    "pinned": true
+   },
+   "final_U95_px": 1.399,
+   "final_p_exceed": null,
+   "final_true_p95_px": 44.3057,
+   "fx_rel_err_pct": 0.0217,
+   "baseline": {
+    "views": 30,
+    "truth": {
+     "field_p95_px": 113.7695,
+     "field_mean_px": 101.088
+    }
+   },
+   "slowest_call_ms": 622.7,
+   "slowest_call": {
+    "step": 31,
+    "rule": "R13_NBV",
+    "tools": [
+     {
+      "tool": "calibrate",
+      "ms": 60.7,
+      "reason": "rebuild"
+     },
+     {
+      "tool": "sim_capture",
+      "ms": 18.6
+     },
+     {
+      "tool": "detect_board",
+      "ms": 15.8
+     },
+     {
+      "tool": "assess_frame",
+      "ms": 34.1
+     },
+     {
+      "tool": "estimate_pose",
+      "ms": 0.6
+     },
+     {
+      "tool": "prequential",
+      "ms": 0.5
+     },
+     {
+      "tool": "calibrate",
+      "ms": 338.3
+     },
+     {
+      "tool": "residual_analysis",
+      "ms": 1.5
+     },
+     {
+      "tool": "uncertainty_map",
+      "ms": 0.8
+     },
+     {
+      "tool": "propose_next_views",
+      "ms": 13.2,
+      "n_candidates": 250,
+      "n_sampled": 300,
+      "n_feasible": 250,
+      "u95_now": 1.4945,
+      "deadline_hit": false,
+      "full_board_only": false
+     },
+     {
+      "tool": "truth",
+      "ms": 1.7
+     },
+     {
+      "tool": "baseline",
+      "ms": 135.6
+     }
+    ]
+   },
+   "median_call_ms": 234.3,
+   "max_token_bytes": 30859,
+   "flags": [],
+   "trace_tail": [
+    "#31 R13_NBV: largest \u03c3 bottom-right 6.42 px, U95 1.49 px, P(>\u03c4)=n/a \u2192 target centre, tilt 50\u00b0 az 135\u00b0 (predicted \u0394U95 0.056 px)",
+    "#32 R13_NBV: largest \u03c3 bottom-right 6.32 px, U95 1.43 px, P(>\u03c4)=n/a \u2192 target bottom-left, tilt 20\u00b0 az 45\u00b0 (predicted \u0394U95 0.058 px)",
+    "#33 R13_NBV: largest \u03c3 top-right 6.20 px, U95 1.43 px, P(>\u03c4)=n/a \u2192 target bottom-left, frontal (predicted \u0394U95 0.052 px)",
+    "#34 R13_NBV: largest \u03c3 top-right 6.09 px, U95 1.42 px, P(>\u03c4)=n/a \u2192 target bottom-left, tilt 20\u00b0 az 45\u00b0 (predicted \u0394U95 0.063 px)",
+    "#35 R12_BUDGET: 30/30 views, U95 1.40 px, P(>\u03c4) n/a (uncalibrated) \u2192 escalate",
+    "#36 APPROVAL ap_2 accept_with_warnings: approve (auto deny_all) \u2192 export with warnings"
+   ],
+   "threshold_overrides": {}
+  }
+ ]
+}

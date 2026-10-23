@@ -1,0 +1,16 @@
+policy,camera_seed,end_reason,stopped,tool_calls,incomplete_call_turns,attempted_calls,valid_calls,repaired_calls,validity,validity_attempted,captures,pose_captures,accepted_views,final_views,exported,export_warnings,agreement_rank1,agreement_rank1_after_opening,dropped_views,final_U95_px,final_p_exceed,final_true_p95_px,fx_rel_err_pct,true_p95_at_budget,nudges,nudges_incomplete_call,wall_s,code,log
+A,1000,,False,,,,,,,,10,,10,10,,,,,,0.4555,0.3258,0.2111,0.0092,0.2111,,,1.36,41a5d8e7c179c52c,
+B0,1000,,,,,,,,,,10,,10,10,,,,,,0.6822,,0.3922,0.0137,0.3922,,,0.42,41a5d8e7c179c52c,
+A,1001,,False,,,,,,,,10,,10,8,,,,,,0.7449,0.7073,1.4085,0.0397,1.4085,,,1.38,41a5d8e7c179c52c,
+B0,1001,,,,,,,,,,10,,10,10,,,,,,6.4264,,2.4034,0.0108,2.4034,,,0.48,41a5d8e7c179c52c,
+A,1002,,False,,,,,,,,10,,10,10,,,,,,0.4989,0.3933,0.7717,0.0066,0.7717,,,1.29,41a5d8e7c179c52c,
+B0,1002,,,,,,,,,,10,,10,10,,,,,,0.6744,,1.0722,0.0299,1.0722,,,0.43,41a5d8e7c179c52c,
+A,1003,,False,,,,,,,,10,,10,9,,,,,,0.5593,0.5064,0.4682,0.0087,0.4682,,,1.27,41a5d8e7c179c52c,
+B0,1003,,,,,,,,,,10,,10,10,,,,,,4.1936,,4.3384,0.2484,4.3384,,,0.43,41a5d8e7c179c52c,
+A,1004,,False,,,,,,,,10,,10,10,,,,,,0.5895,0.5516,1.7251,0.0321,1.7251,,,1.35,41a5d8e7c179c52c,
+B0,1004,,,,,,,,,,10,,10,10,,,,,,1.5429,,1.7049,0.0152,1.7049,,,0.43,41a5d8e7c179c52c,
+LLM nemotron-3-nano:4b@think+pose,1000,stalled,,25,4,29,20,3,0.8,0.6897,5,0,4,4,False,,1.0,1.0,0,1.1835,0.9047,1.6234,0.0176,,3,3,38.5,,results/llm_row_think/nemotron-3-nano_4b_think_pose/run_1000.jsonl
+LLM nemotron-3-nano:4b@think+pose,1001,exported,,20,0,20,17,1,0.85,0.85,5,0,3,3,True,True,1.0,1.0,0,70.8331,1.0,19.5731,0.0072,,4,0,81.3,,results/llm_row_think/nemotron-3-nano_4b_think_pose/run_1001.jsonl
+LLM nemotron-3-nano:4b@think+pose,1002,stalled,,26,9,35,22,1,0.8462,0.6286,7,0,4,4,False,,1.0,1.0,0,1.1017,0.8863,0.2869,0.0147,,8,8,37.8,,results/llm_row_think/nemotron-3-nano_4b_think_pose/run_1002.jsonl
+LLM nemotron-3-nano:4b@think+pose,1003,stalled,,24,9,33,22,0,0.9167,0.6667,6,0,5,4,False,,1.0,1.0,1,1.1886,0.9056,0.7035,0.0483,,9,8,46.8,,results/llm_row_think/nemotron-3-nano_4b_think_pose/run_1003.jsonl
+LLM nemotron-3-nano:4b@think+pose,1004,stalled,,20,12,32,18,1,0.9,0.5625,6,0,4,4,False,,1.0,1.0,0,1.5902,0.9642,1.6336,0.0613,,11,11,32.0,,results/llm_row_think/nemotron-3-nano_4b_think_pose/run_1004.jsonl

@@ -1,0 +1,48 @@
+{
+ "what": "ECR basic image scan (scan on push) of the deployed image",
+ "image_tag": "389fb6f",
+ "image_digest": "sha256:33f6881335256fb32b89eddf909e2ac0b254dc10f0160d3b9c082867ed14dd04",
+ "base_image_digest": "sha256:25aee9bac65f131c5d090d3e3a36ccf232d65cf3e6c1dbd0bffd43ca7ce34406",
+ "scan_status": "COMPLETE",
+ "scan_completed": "2026-10-23T14:46:21+08:00",
+ "vulnerability_source_updated": "2026-10-23T14:46:21+08:00",
+ "finding_counts": {
+  "HIGH": 12,
+  "MEDIUM": 20,
+  "LOW": 5,
+  "UNDEFINED": 1
+ },
+ "distinct_ids": {
+  "HIGH": 6,
+  "MEDIUM": 13,
+  "LOW": 3,
+  "UNDEFINED": 1
+ },
+ "packages": {
+  "HIGH": [
+   "curl-minimal",
+   "libcurl-minimal",
+   "openssl-fips-provider-latest",
+   "openssl-snapsafe-libs",
+   "pcre2",
+   "pcre2-syntax",
+   "rpm",
+   "rpm-libs"
+  ],
+  "MEDIUM": [
+   "libxml2",
+   "openssl-fips-provider-latest",
+   "openssl-snapsafe-libs"
+  ],
+  "LOW": [
+   "libxml2",
+   "openssl-fips-provider-latest",
+   "openssl-snapsafe-libs"
+  ],
+  "UNDEFINED": [
+   "krb5-libs"
+  ]
+ },
+ "python_packages_with_findings": [],
+ "note": "Findings count a CVE once per affected package. Every affected package is an Amazon Linux 2023 OS package of the AWS Lambda Python 3.12 base image (pinned by digest in the Dockerfile); none is in the packages the image adds (opencv-python-headless, numpy). Written by scripts/ecr_scan_summary.py from `aws ecr describe-image-scan-findings` for this tag."
+}

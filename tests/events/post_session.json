@@ -1,0 +1,33 @@
+{
+  "version": "2.0",
+  "routeKey": "$default",
+  "rawPath": "/api/session",
+  "rawQueryString": "",
+  "headers": {
+    "accept": "*/*",
+    "host": "example.execute-api.ap-southeast-1.amazonaws.com",
+    "user-agent": "curl/8.0",
+    "x-forwarded-proto": "https",
+    "content-type": "application/json"
+  },
+  "requestContext": {
+    "accountId": "123456789012",
+    "apiId": "example",
+    "domainName": "example.execute-api.ap-southeast-1.amazonaws.com",
+    "domainPrefix": "example",
+    "http": {
+      "method": "POST",
+      "path": "/api/session",
+      "protocol": "HTTP/1.1",
+      "sourceIp": "192.0.2.1",
+      "userAgent": "curl/8.0"
+    },
+    "requestId": "test-request-id",
+    "routeKey": "$default",
+    "stage": "$default",
+    "time": "23/Oct/2026:01:00:00 +0000",
+    "timeEpoch": 1792717200000
+  },
+  "isBase64Encoded": false,
+  "body": "{\"mode\": \"sim\", \"preset\": \"wide_robot_handheld\", \"actuator\": \"human\", \"seed\": 42, \"budget\": 30}"
+}

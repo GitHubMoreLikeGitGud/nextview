@@ -1,0 +1,1090 @@
+{
+ "Z_m": 1.0,
+ "tolerance_px": 0.1,
+ "segment_mm": 100,
+ "pairs": 200,
+ "outer_band": 0.3,
+ "note": "post-hoc diagnostic (descriptive); an endpoint fails when its back-projection, projected again with the same estimate, misses the pixel by more than the tolerance",
+ "table": {
+  "A/human/n10": {
+   "runs": 297,
+   "runs_with_failed_endpoints": 73,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.1497877827859809,
+   "median_of_run_p95_mm_invertible_pairs": 0.1497877827859809,
+   "median_of_run_median_mm_invertible_pairs": 0.047106051443449815
+  },
+  "A/human/n10/normal": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.10815701425410532,
+   "median_of_run_p95_mm_invertible_pairs": 0.10815701425410532,
+   "median_of_run_median_mm_invertible_pairs": 0.030599838135294988
+  },
+  "A/human/n10/tele": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.06970746292445042,
+   "median_of_run_p95_mm_invertible_pairs": 0.06970746292445042,
+   "median_of_run_median_mm_invertible_pairs": 0.0366794784565343
+  },
+  "A/human/n10/webcam": {
+   "runs": 74,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.15950280314332715,
+   "median_of_run_p95_mm_invertible_pairs": 0.15950280314332715,
+   "median_of_run_median_mm_invertible_pairs": 0.04477029082262973
+  },
+  "A/human/n10/wide": {
+   "runs": 73,
+   "runs_with_failed_endpoints": 73,
+   "median_endpoint_fail_share": 0.0775,
+   "median_pair_fail_share": 0.095,
+   "median_of_run_p95_mm": 29.765641801597013,
+   "median_of_run_p95_mm_invertible_pairs": 6.389457296721451,
+   "median_of_run_median_mm_invertible_pairs": 0.3271418640237158
+  },
+  "A/human/n30": {
+   "runs": 215,
+   "runs_with_failed_endpoints": 12,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.09120464341240146,
+   "median_of_run_p95_mm_invertible_pairs": 0.08890482555300139,
+   "median_of_run_median_mm_invertible_pairs": 0.024133793719329333
+  },
+  "A/human/n30/normal": {
+   "runs": 68,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.06755525918931468,
+   "median_of_run_p95_mm_invertible_pairs": 0.06755525918931468,
+   "median_of_run_median_mm_invertible_pairs": 0.018293183644413347
+  },
+  "A/human/n30/tele": {
+   "runs": 25,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.0392646948250835,
+   "median_of_run_p95_mm_invertible_pairs": 0.0392646948250835,
+   "median_of_run_median_mm_invertible_pairs": 0.019817894923683355
+  },
+  "A/human/n30/webcam": {
+   "runs": 48,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.08944360967860089,
+   "median_of_run_p95_mm_invertible_pairs": 0.08944360967860089,
+   "median_of_run_median_mm_invertible_pairs": 0.026189486020811614
+  },
+  "A/human/n30/wide": {
+   "runs": 74,
+   "runs_with_failed_endpoints": 12,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.21342199618758528,
+   "median_of_run_p95_mm_invertible_pairs": 0.2027623143853261,
+   "median_of_run_median_mm_invertible_pairs": 0.03461247951181434
+  },
+  "A/robot/n10": {
+   "runs": 300,
+   "runs_with_failed_endpoints": 75,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.11925653871015215,
+   "median_of_run_p95_mm_invertible_pairs": 0.11925653871015215,
+   "median_of_run_median_mm_invertible_pairs": 0.04656542835648381
+  },
+  "A/robot/n10/normal": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.10462759152692327,
+   "median_of_run_p95_mm_invertible_pairs": 0.10462759152692327,
+   "median_of_run_median_mm_invertible_pairs": 0.035230065038462044
+  },
+  "A/robot/n10/tele": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.06010219945207423,
+   "median_of_run_p95_mm_invertible_pairs": 0.06010219945207423,
+   "median_of_run_median_mm_invertible_pairs": 0.03248979885889014
+  },
+  "A/robot/n10/webcam": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.11280581376577524,
+   "median_of_run_p95_mm_invertible_pairs": 0.11280581376577524,
+   "median_of_run_median_mm_invertible_pairs": 0.03761635356126192
+  },
+  "A/robot/n10/wide": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 75,
+   "median_endpoint_fail_share": 0.0725,
+   "median_pair_fail_share": 0.085,
+   "median_of_run_p95_mm": 25.894006443840965,
+   "median_of_run_p95_mm_invertible_pairs": 6.092454647237107,
+   "median_of_run_median_mm_invertible_pairs": 0.35930880857843306
+  },
+  "A/robot/n30": {
+   "runs": 300,
+   "runs_with_failed_endpoints": 12,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.0815360691209647,
+   "median_of_run_p95_mm_invertible_pairs": 0.0815360691209647,
+   "median_of_run_median_mm_invertible_pairs": 0.024684611961550473
+  },
+  "A/robot/n30/normal": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.06768588378727713,
+   "median_of_run_p95_mm_invertible_pairs": 0.06768588378727713,
+   "median_of_run_median_mm_invertible_pairs": 0.020293504618813074
+  },
+  "A/robot/n30/tele": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.050634654367509996,
+   "median_of_run_p95_mm_invertible_pairs": 0.050634654367509996,
+   "median_of_run_median_mm_invertible_pairs": 0.021183155114030683
+  },
+  "A/robot/n30/webcam": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.08970679273174226,
+   "median_of_run_p95_mm_invertible_pairs": 0.08970679273174226,
+   "median_of_run_median_mm_invertible_pairs": 0.031206114686732178
+  },
+  "A/robot/n30/wide": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 12,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.18205947378720766,
+   "median_of_run_p95_mm_invertible_pairs": 0.17104801125193883,
+   "median_of_run_median_mm_invertible_pairs": 0.034613043426588774
+  },
+  "B0/human/n10": {
+   "runs": 300,
+   "runs_with_failed_endpoints": 77,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.483743571228576,
+   "median_of_run_p95_mm_invertible_pairs": 0.483743571228576,
+   "median_of_run_median_mm_invertible_pairs": 0.14398324068005053
+  },
+  "B0/human/n10/normal": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.31644373371696216,
+   "median_of_run_p95_mm_invertible_pairs": 0.31644373371696216,
+   "median_of_run_median_mm_invertible_pairs": 0.10158699622610357
+  },
+  "B0/human/n10/tele": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 2,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.17492836673718967,
+   "median_of_run_p95_mm_invertible_pairs": 0.17492836673718967,
+   "median_of_run_median_mm_invertible_pairs": 0.11758136981123357
+  },
+  "B0/human/n10/webcam": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.31313223472678675,
+   "median_of_run_p95_mm_invertible_pairs": 0.31313223472678675,
+   "median_of_run_median_mm_invertible_pairs": 0.08488632672529661
+  },
+  "B0/human/n10/wide": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 75,
+   "median_endpoint_fail_share": 0.1325,
+   "median_pair_fail_share": 0.155,
+   "median_of_run_p95_mm": 43.40187580554893,
+   "median_of_run_p95_mm_invertible_pairs": 10.05399744395916,
+   "median_of_run_median_mm_invertible_pairs": 0.31520084584767005
+  },
+  "B0/human/n30": {
+   "runs": 300,
+   "runs_with_failed_endpoints": 78,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.2745095577643154,
+   "median_of_run_p95_mm_invertible_pairs": 0.2745095577643154,
+   "median_of_run_median_mm_invertible_pairs": 0.105436815226156
+  },
+  "B0/human/n30/normal": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.19446660272989788,
+   "median_of_run_p95_mm_invertible_pairs": 0.19446660272989788,
+   "median_of_run_median_mm_invertible_pairs": 0.0612578409220248
+  },
+  "B0/human/n30/tele": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 3,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.18176724572786399,
+   "median_of_run_p95_mm_invertible_pairs": 0.18176724572786399,
+   "median_of_run_median_mm_invertible_pairs": 0.09276330785134235
+  },
+  "B0/human/n30/webcam": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.20287378618452648,
+   "median_of_run_p95_mm_invertible_pairs": 0.20287378618452648,
+   "median_of_run_median_mm_invertible_pairs": 0.05919484449803036
+  },
+  "B0/human/n30/wide": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 75,
+   "median_endpoint_fail_share": 0.0875,
+   "median_pair_fail_share": 0.1,
+   "median_of_run_p95_mm": 30.627038827330086,
+   "median_of_run_p95_mm_invertible_pairs": 6.954721599982191,
+   "median_of_run_median_mm_invertible_pairs": 0.32455703684181003
+  },
+  "B0/robot/n10": {
+   "runs": 300,
+   "runs_with_failed_endpoints": 76,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.36040293521855377,
+   "median_of_run_p95_mm_invertible_pairs": 0.36040293521855377,
+   "median_of_run_median_mm_invertible_pairs": 0.12053155294733742
+  },
+  "B0/robot/n10/normal": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.21796511364714663,
+   "median_of_run_p95_mm_invertible_pairs": 0.21796511364714663,
+   "median_of_run_median_mm_invertible_pairs": 0.07353765419734515
+  },
+  "B0/robot/n10/tele": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 1,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.15341105608961528,
+   "median_of_run_p95_mm_invertible_pairs": 0.15341105608961528,
+   "median_of_run_median_mm_invertible_pairs": 0.0970860332764687
+  },
+  "B0/robot/n10/webcam": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.31782243302759144,
+   "median_of_run_p95_mm_invertible_pairs": 0.31782243302759144,
+   "median_of_run_median_mm_invertible_pairs": 0.08264872440853566
+  },
+  "B0/robot/n10/wide": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 75,
+   "median_endpoint_fail_share": 0.1025,
+   "median_pair_fail_share": 0.125,
+   "median_of_run_p95_mm": 35.356591979795425,
+   "median_of_run_p95_mm_invertible_pairs": 7.883373196941768,
+   "median_of_run_median_mm_invertible_pairs": 0.38024180827258647
+  },
+  "B0/robot/n30": {
+   "runs": 300,
+   "runs_with_failed_endpoints": 75,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.22008751067166368,
+   "median_of_run_p95_mm_invertible_pairs": 0.22008751067166368,
+   "median_of_run_median_mm_invertible_pairs": 0.09495567907863744
+  },
+  "B0/robot/n30/normal": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.15073114176935717,
+   "median_of_run_p95_mm_invertible_pairs": 0.15073114176935717,
+   "median_of_run_median_mm_invertible_pairs": 0.04508623060951322
+  },
+  "B0/robot/n30/tele": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.167286811131229,
+   "median_of_run_p95_mm_invertible_pairs": 0.167286811131229,
+   "median_of_run_median_mm_invertible_pairs": 0.09720052069258855
+  },
+  "B0/robot/n30/webcam": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.1739617489487385,
+   "median_of_run_p95_mm_invertible_pairs": 0.1739617489487385,
+   "median_of_run_median_mm_invertible_pairs": 0.05677266390964064
+  },
+  "B0/robot/n30/wide": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 75,
+   "median_endpoint_fail_share": 0.075,
+   "median_pair_fail_share": 0.095,
+   "median_of_run_p95_mm": 29.735351002723768,
+   "median_of_run_p95_mm_invertible_pairs": 6.427756096625654,
+   "median_of_run_median_mm_invertible_pairs": 0.35833372493934235
+  },
+  "B1/human/n10": {
+   "runs": 300,
+   "runs_with_failed_endpoints": 76,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.3480253409176447,
+   "median_of_run_p95_mm_invertible_pairs": 0.3480253409176447,
+   "median_of_run_median_mm_invertible_pairs": 0.1375657256439915
+  },
+  "B1/human/n10/normal": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.21096552948245909,
+   "median_of_run_p95_mm_invertible_pairs": 0.21096552948245909,
+   "median_of_run_median_mm_invertible_pairs": 0.09768366159234887
+  },
+  "B1/human/n10/tele": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 1,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.22942303401133657,
+   "median_of_run_p95_mm_invertible_pairs": 0.22942303401133657,
+   "median_of_run_median_mm_invertible_pairs": 0.16373871745986435
+  },
+  "B1/human/n10/webcam": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.23579343904235223,
+   "median_of_run_p95_mm_invertible_pairs": 0.23579343904235223,
+   "median_of_run_median_mm_invertible_pairs": 0.09493599373141848
+  },
+  "B1/human/n10/wide": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 75,
+   "median_endpoint_fail_share": 0.2325,
+   "median_pair_fail_share": 0.265,
+   "median_of_run_p95_mm": 58.72264465199504,
+   "median_of_run_p95_mm_invertible_pairs": 14.354467437545566,
+   "median_of_run_median_mm_invertible_pairs": 0.19761435104972236
+  },
+  "B1/human/n30": {
+   "runs": 300,
+   "runs_with_failed_endpoints": 75,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.3034561472894884,
+   "median_of_run_p95_mm_invertible_pairs": 0.3034561472894884,
+   "median_of_run_median_mm_invertible_pairs": 0.11283734705310522
+  },
+  "B1/human/n30/normal": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.1984053234122768,
+   "median_of_run_p95_mm_invertible_pairs": 0.1984053234122768,
+   "median_of_run_median_mm_invertible_pairs": 0.08081680485859266
+  },
+  "B1/human/n30/tele": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.30708781977744226,
+   "median_of_run_p95_mm_invertible_pairs": 0.30708781977744226,
+   "median_of_run_median_mm_invertible_pairs": 0.17532649393919542
+  },
+  "B1/human/n30/webcam": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.15792050617569156,
+   "median_of_run_p95_mm_invertible_pairs": 0.15792050617569156,
+   "median_of_run_median_mm_invertible_pairs": 0.0692023024071986
+  },
+  "B1/human/n30/wide": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 75,
+   "median_endpoint_fail_share": 0.1725,
+   "median_pair_fail_share": 0.2,
+   "median_of_run_p95_mm": 52.14951696259513,
+   "median_of_run_p95_mm_invertible_pairs": 11.323696875391823,
+   "median_of_run_median_mm_invertible_pairs": 0.18600214428902007
+  },
+  "B1/robot/n10": {
+   "runs": 300,
+   "runs_with_failed_endpoints": 75,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.26480330914103495,
+   "median_of_run_p95_mm_invertible_pairs": 0.26480330914103495,
+   "median_of_run_median_mm_invertible_pairs": 0.13551647432525726
+  },
+  "B1/robot/n10/normal": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.19130208663336168,
+   "median_of_run_p95_mm_invertible_pairs": 0.19130208663336168,
+   "median_of_run_median_mm_invertible_pairs": 0.09217851798431553
+  },
+  "B1/robot/n10/tele": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.2173623118384171,
+   "median_of_run_p95_mm_invertible_pairs": 0.2173623118384171,
+   "median_of_run_median_mm_invertible_pairs": 0.1321145973106681
+  },
+  "B1/robot/n10/webcam": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.22055522719267487,
+   "median_of_run_p95_mm_invertible_pairs": 0.22055522719267487,
+   "median_of_run_median_mm_invertible_pairs": 0.13610058759470434
+  },
+  "B1/robot/n10/wide": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 75,
+   "median_endpoint_fail_share": 0.215,
+   "median_pair_fail_share": 0.24,
+   "median_of_run_p95_mm": 62.80711201948636,
+   "median_of_run_p95_mm_invertible_pairs": 15.074707296864744,
+   "median_of_run_median_mm_invertible_pairs": 0.17762869242908153
+  },
+  "B1/robot/n30": {
+   "runs": 300,
+   "runs_with_failed_endpoints": 75,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.218570076016271,
+   "median_of_run_p95_mm_invertible_pairs": 0.218570076016271,
+   "median_of_run_median_mm_invertible_pairs": 0.1146963200659954
+  },
+  "B1/robot/n30/normal": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.1776655486564087,
+   "median_of_run_p95_mm_invertible_pairs": 0.1776655486564087,
+   "median_of_run_median_mm_invertible_pairs": 0.08916633012183439
+  },
+  "B1/robot/n30/tele": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.15822127698382213,
+   "median_of_run_p95_mm_invertible_pairs": 0.15822127698382213,
+   "median_of_run_median_mm_invertible_pairs": 0.08182500177662888
+  },
+  "B1/robot/n30/webcam": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.18831250263209107,
+   "median_of_run_p95_mm_invertible_pairs": 0.18831250263209107,
+   "median_of_run_median_mm_invertible_pairs": 0.10656446361932836
+  },
+  "B1/robot/n30/wide": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 75,
+   "median_endpoint_fail_share": 0.1825,
+   "median_pair_fail_share": 0.21,
+   "median_of_run_p95_mm": 52.034750791873506,
+   "median_of_run_p95_mm_invertible_pairs": 12.952510477326648,
+   "median_of_run_median_mm_invertible_pairs": 0.1654443996833379
+  },
+  "B2/human/n10": {
+   "runs": 296,
+   "runs_with_failed_endpoints": 64,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.3621308795778122,
+   "median_of_run_p95_mm_invertible_pairs": 0.3621308795778122,
+   "median_of_run_median_mm_invertible_pairs": 0.1143166536805289
+  },
+  "B2/human/n10/normal": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.22164573587955302,
+   "median_of_run_p95_mm_invertible_pairs": 0.22164573587955302,
+   "median_of_run_median_mm_invertible_pairs": 0.08292691549810627
+  },
+  "B2/human/n10/tele": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.13787667612509508,
+   "median_of_run_p95_mm_invertible_pairs": 0.13787667612509508,
+   "median_of_run_median_mm_invertible_pairs": 0.10013034763567674
+  },
+  "B2/human/n10/webcam": {
+   "runs": 74,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.3025160535212854,
+   "median_of_run_p95_mm_invertible_pairs": 0.3025160535212854,
+   "median_of_run_median_mm_invertible_pairs": 0.0856340542325178
+  },
+  "B2/human/n10/wide": {
+   "runs": 72,
+   "runs_with_failed_endpoints": 64,
+   "median_endpoint_fail_share": 0.11499999999999999,
+   "median_pair_fail_share": 0.1375,
+   "median_of_run_p95_mm": 45.98873881889044,
+   "median_of_run_p95_mm_invertible_pairs": 11.953134638318229,
+   "median_of_run_median_mm_invertible_pairs": 0.35692561711227455
+  },
+  "B2/human/n30": {
+   "runs": 293,
+   "runs_with_failed_endpoints": 58,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.5370596846677472,
+   "median_of_run_p95_mm_invertible_pairs": 0.5370596846677472,
+   "median_of_run_median_mm_invertible_pairs": 0.21184971169001443
+  },
+  "B2/human/n30/normal": {
+   "runs": 74,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.4478643819356971,
+   "median_of_run_p95_mm_invertible_pairs": 0.4478643819356971,
+   "median_of_run_median_mm_invertible_pairs": 0.17061163695863613
+  },
+  "B2/human/n30/tele": {
+   "runs": 74,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.34785376461884515,
+   "median_of_run_p95_mm_invertible_pairs": 0.34785376461884515,
+   "median_of_run_median_mm_invertible_pairs": 0.25767339715648063
+  },
+  "B2/human/n30/webcam": {
+   "runs": 74,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.38133189349056545,
+   "median_of_run_p95_mm_invertible_pairs": 0.38133189349056545,
+   "median_of_run_median_mm_invertible_pairs": 0.12603831533006726
+  },
+  "B2/human/n30/wide": {
+   "runs": 71,
+   "runs_with_failed_endpoints": 58,
+   "median_endpoint_fail_share": 0.07,
+   "median_pair_fail_share": 0.09,
+   "median_of_run_p95_mm": 35.612979023600005,
+   "median_of_run_p95_mm_invertible_pairs": 8.215579442297138,
+   "median_of_run_median_mm_invertible_pairs": 0.5103020594596757
+  },
+  "B2/robot/n10": {
+   "runs": 292,
+   "runs_with_failed_endpoints": 54,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.3550905315477284,
+   "median_of_run_p95_mm_invertible_pairs": 0.3550905315477284,
+   "median_of_run_median_mm_invertible_pairs": 0.11321382784353418
+  },
+  "B2/robot/n10/normal": {
+   "runs": 74,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.21374878981400453,
+   "median_of_run_p95_mm_invertible_pairs": 0.21374878981400453,
+   "median_of_run_median_mm_invertible_pairs": 0.07248032463715504
+  },
+  "B2/robot/n10/tele": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.16015590800416388,
+   "median_of_run_p95_mm_invertible_pairs": 0.16015590800416388,
+   "median_of_run_median_mm_invertible_pairs": 0.10796753054443542
+  },
+  "B2/robot/n10/webcam": {
+   "runs": 74,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.3255906679206374,
+   "median_of_run_p95_mm_invertible_pairs": 0.3255906679206374,
+   "median_of_run_median_mm_invertible_pairs": 0.0803998776180812
+  },
+  "B2/robot/n10/wide": {
+   "runs": 69,
+   "runs_with_failed_endpoints": 54,
+   "median_endpoint_fail_share": 0.1,
+   "median_pair_fail_share": 0.12,
+   "median_of_run_p95_mm": 47.97065367387873,
+   "median_of_run_p95_mm_invertible_pairs": 12.072664274823728,
+   "median_of_run_median_mm_invertible_pairs": 0.5061357393752601
+  },
+  "B2/robot/n30": {
+   "runs": 287,
+   "runs_with_failed_endpoints": 56,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.44123362484628004,
+   "median_of_run_p95_mm_invertible_pairs": 0.44123362484628004,
+   "median_of_run_median_mm_invertible_pairs": 0.1749430267582781
+  },
+  "B2/robot/n30/normal": {
+   "runs": 74,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.421687069117228,
+   "median_of_run_p95_mm_invertible_pairs": 0.421687069117228,
+   "median_of_run_median_mm_invertible_pairs": 0.16649928120352797
+  },
+  "B2/robot/n30/tele": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.3355676309249816,
+   "median_of_run_p95_mm_invertible_pairs": 0.3355676309249816,
+   "median_of_run_median_mm_invertible_pairs": 0.16527937011203164
+  },
+  "B2/robot/n30/webcam": {
+   "runs": 74,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.3015873684619901,
+   "median_of_run_p95_mm_invertible_pairs": 0.3015873684619901,
+   "median_of_run_median_mm_invertible_pairs": 0.10037776616696092
+  },
+  "B2/robot/n30/wide": {
+   "runs": 64,
+   "runs_with_failed_endpoints": 56,
+   "median_endpoint_fail_share": 0.07125000000000001,
+   "median_pair_fail_share": 0.0925,
+   "median_of_run_p95_mm": 31.694189663767723,
+   "median_of_run_p95_mm_invertible_pairs": 8.284488248232273,
+   "median_of_run_median_mm_invertible_pairs": 0.5845307476430222
+  },
+  "B3/human/n10": {
+   "runs": 297,
+   "runs_with_failed_endpoints": 75,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.41856964899643895,
+   "median_of_run_p95_mm_invertible_pairs": 0.41856964899643895,
+   "median_of_run_median_mm_invertible_pairs": 0.14654729378599995
+  },
+  "B3/human/n10/normal": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.21957062394536278,
+   "median_of_run_p95_mm_invertible_pairs": 0.21957062394536278,
+   "median_of_run_median_mm_invertible_pairs": 0.09033733238976538
+  },
+  "B3/human/n10/tele": {
+   "runs": 72,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.16996838223480953,
+   "median_of_run_p95_mm_invertible_pairs": 0.16996838223480953,
+   "median_of_run_median_mm_invertible_pairs": 0.09462789425878171
+  },
+  "B3/human/n10/webcam": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.26729188703441187,
+   "median_of_run_p95_mm_invertible_pairs": 0.26729188703441187,
+   "median_of_run_median_mm_invertible_pairs": 0.10134143194800771
+  },
+  "B3/human/n10/wide": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 75,
+   "median_endpoint_fail_share": 0.085,
+   "median_pair_fail_share": 0.11,
+   "median_of_run_p95_mm": 33.124284190284776,
+   "median_of_run_p95_mm_invertible_pairs": 7.715608173882334,
+   "median_of_run_median_mm_invertible_pairs": 0.4139789349476146
+  },
+  "B3/human/n30": {
+   "runs": 287,
+   "runs_with_failed_endpoints": 77,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.3609129056894018,
+   "median_of_run_p95_mm_invertible_pairs": 0.3599767412662689,
+   "median_of_run_median_mm_invertible_pairs": 0.14033661843715706
+  },
+  "B3/human/n30/normal": {
+   "runs": 74,
+   "runs_with_failed_endpoints": 1,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.22455086523756368,
+   "median_of_run_p95_mm_invertible_pairs": 0.22351867272713757,
+   "median_of_run_median_mm_invertible_pairs": 0.09442626007949428
+  },
+  "B3/human/n30/tele": {
+   "runs": 63,
+   "runs_with_failed_endpoints": 2,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.2053944221150585,
+   "median_of_run_p95_mm_invertible_pairs": 0.2053944221150585,
+   "median_of_run_median_mm_invertible_pairs": 0.0868227614453474
+  },
+  "B3/human/n30/webcam": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.27671185811094207,
+   "median_of_run_p95_mm_invertible_pairs": 0.27671185811094207,
+   "median_of_run_median_mm_invertible_pairs": 0.11765500783999983
+  },
+  "B3/human/n30/wide": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 74,
+   "median_endpoint_fail_share": 0.0375,
+   "median_pair_fail_share": 0.05,
+   "median_of_run_p95_mm": 13.658705987695676,
+   "median_of_run_p95_mm_invertible_pairs": 5.8420674019427,
+   "median_of_run_median_mm_invertible_pairs": 0.6395850691320106
+  },
+  "B3/robot/n10": {
+   "runs": 300,
+   "runs_with_failed_endpoints": 75,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.3121691094404233,
+   "median_of_run_p95_mm_invertible_pairs": 0.3121691094404233,
+   "median_of_run_median_mm_invertible_pairs": 0.1252352954420104
+  },
+  "B3/robot/n10/normal": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.17785844543663074,
+   "median_of_run_p95_mm_invertible_pairs": 0.17785844543663074,
+   "median_of_run_median_mm_invertible_pairs": 0.07071006574304306
+  },
+  "B3/robot/n10/tele": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.16094434784415265,
+   "median_of_run_p95_mm_invertible_pairs": 0.16094434784415265,
+   "median_of_run_median_mm_invertible_pairs": 0.09841337610817646
+  },
+  "B3/robot/n10/webcam": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.21112346354921938,
+   "median_of_run_p95_mm_invertible_pairs": 0.21112346354921938,
+   "median_of_run_median_mm_invertible_pairs": 0.08056542518682619
+  },
+  "B3/robot/n10/wide": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 75,
+   "median_endpoint_fail_share": 0.0825,
+   "median_pair_fail_share": 0.105,
+   "median_of_run_p95_mm": 33.33760883821121,
+   "median_of_run_p95_mm_invertible_pairs": 5.7803905686775465,
+   "median_of_run_median_mm_invertible_pairs": 0.42302249530762026
+  },
+  "B3/robot/n30": {
+   "runs": 300,
+   "runs_with_failed_endpoints": 75,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.2885392698682178,
+   "median_of_run_p95_mm_invertible_pairs": 0.2885392698682178,
+   "median_of_run_median_mm_invertible_pairs": 0.13267875118329542
+  },
+  "B3/robot/n30/normal": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.1945126813873144,
+   "median_of_run_p95_mm_invertible_pairs": 0.1945126813873144,
+   "median_of_run_median_mm_invertible_pairs": 0.0935252850430004
+  },
+  "B3/robot/n30/tele": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.21492110713921733,
+   "median_of_run_p95_mm_invertible_pairs": 0.21492110713921733,
+   "median_of_run_median_mm_invertible_pairs": 0.10979554176773831
+  },
+  "B3/robot/n30/webcam": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.19546829158779744,
+   "median_of_run_p95_mm_invertible_pairs": 0.19546829158779744,
+   "median_of_run_median_mm_invertible_pairs": 0.08200381348567021
+  },
+  "B3/robot/n30/wide": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 75,
+   "median_endpoint_fail_share": 0.0375,
+   "median_pair_fail_share": 0.045,
+   "median_of_run_p95_mm": 12.618911887011999,
+   "median_of_run_p95_mm_invertible_pairs": 5.1955204636597045,
+   "median_of_run_median_mm_invertible_pairs": 0.6984026776277261
+  },
+  "B4/human/n10": {
+   "runs": 300,
+   "runs_with_failed_endpoints": 73,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.702969173518283,
+   "median_of_run_p95_mm_invertible_pairs": 0.6935521484519491,
+   "median_of_run_median_mm_invertible_pairs": 0.3772777007836581
+  },
+  "B4/human/n10/normal": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.3486065375319753,
+   "median_of_run_p95_mm_invertible_pairs": 0.3486065375319753,
+   "median_of_run_median_mm_invertible_pairs": 0.19036523048508514
+  },
+  "B4/human/n10/tele": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 2,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.42777341008110736,
+   "median_of_run_p95_mm_invertible_pairs": 0.4126006342179366,
+   "median_of_run_median_mm_invertible_pairs": 0.2973255271649329
+  },
+  "B4/human/n10/webcam": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.5165622890047338,
+   "median_of_run_p95_mm_invertible_pairs": 0.5165622890047338,
+   "median_of_run_median_mm_invertible_pairs": 0.24929853765140564
+  },
+  "B4/human/n10/wide": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 71,
+   "median_endpoint_fail_share": 0.0175,
+   "median_pair_fail_share": 0.03,
+   "median_of_run_p95_mm": 7.435417102475487,
+   "median_of_run_p95_mm_invertible_pairs": 4.3207975341663705,
+   "median_of_run_median_mm_invertible_pairs": 1.5370392984911163
+  },
+  "B4/human/n30": {
+   "runs": 300,
+   "runs_with_failed_endpoints": 75,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.4723267330188015,
+   "median_of_run_p95_mm_invertible_pairs": 0.4723267330188015,
+   "median_of_run_median_mm_invertible_pairs": 0.21188291694404526
+  },
+  "B4/human/n30/normal": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.2773493827583379,
+   "median_of_run_p95_mm_invertible_pairs": 0.2773493827583379,
+   "median_of_run_median_mm_invertible_pairs": 0.11882234206197495
+  },
+  "B4/human/n30/tele": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.49569500110194864,
+   "median_of_run_p95_mm_invertible_pairs": 0.49569500110194864,
+   "median_of_run_median_mm_invertible_pairs": 0.31947525469579574
+  },
+  "B4/human/n30/webcam": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.2731877603058436,
+   "median_of_run_p95_mm_invertible_pairs": 0.2731877603058436,
+   "median_of_run_median_mm_invertible_pairs": 0.10554094658753144
+  },
+  "B4/human/n30/wide": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 75,
+   "median_endpoint_fail_share": 0.025,
+   "median_pair_fail_share": 0.035,
+   "median_of_run_p95_mm": 7.745026716501164,
+   "median_of_run_p95_mm_invertible_pairs": 4.473466732018504,
+   "median_of_run_median_mm_invertible_pairs": 1.1656848246945373
+  },
+  "B4/robot/n10": {
+   "runs": 300,
+   "runs_with_failed_endpoints": 64,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.7579913741177704,
+   "median_of_run_p95_mm_invertible_pairs": 0.7579913741177704,
+   "median_of_run_median_mm_invertible_pairs": 0.4607767966844065
+  },
+  "B4/robot/n10/normal": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.4685836249754999,
+   "median_of_run_p95_mm_invertible_pairs": 0.4685836249754999,
+   "median_of_run_median_mm_invertible_pairs": 0.2759904185080586
+  },
+  "B4/robot/n10/tele": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.5748582937534564,
+   "median_of_run_p95_mm_invertible_pairs": 0.5748582937534564,
+   "median_of_run_median_mm_invertible_pairs": 0.4038387555372438
+  },
+  "B4/robot/n10/webcam": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.39826075777592734,
+   "median_of_run_p95_mm_invertible_pairs": 0.39826075777592734,
+   "median_of_run_median_mm_invertible_pairs": 0.22043856225464964
+  },
+  "B4/robot/n10/wide": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 64,
+   "median_endpoint_fail_share": 0.0075,
+   "median_pair_fail_share": 0.015,
+   "median_of_run_p95_mm": 5.696209364579916,
+   "median_of_run_p95_mm_invertible_pairs": 4.930710867382271,
+   "median_of_run_median_mm_invertible_pairs": 2.7320176374520315
+  },
+  "B4/robot/n30": {
+   "runs": 300,
+   "runs_with_failed_endpoints": 74,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.44256832762763904,
+   "median_of_run_p95_mm_invertible_pairs": 0.44256832762763904,
+   "median_of_run_median_mm_invertible_pairs": 0.2539252674025718
+  },
+  "B4/robot/n30/normal": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.3364411284672526,
+   "median_of_run_p95_mm_invertible_pairs": 0.3364411284672526,
+   "median_of_run_median_mm_invertible_pairs": 0.1252799237872253
+  },
+  "B4/robot/n30/tele": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.37642509847141453,
+   "median_of_run_p95_mm_invertible_pairs": 0.37642509847141453,
+   "median_of_run_median_mm_invertible_pairs": 0.26506222966862225
+  },
+  "B4/robot/n30/webcam": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 0,
+   "median_endpoint_fail_share": 0.0,
+   "median_pair_fail_share": 0.0,
+   "median_of_run_p95_mm": 0.26995423466996016,
+   "median_of_run_p95_mm_invertible_pairs": 0.26995423466996016,
+   "median_of_run_median_mm_invertible_pairs": 0.13717266147357066
+  },
+  "B4/robot/n30/wide": {
+   "runs": 75,
+   "runs_with_failed_endpoints": 74,
+   "median_endpoint_fail_share": 0.015,
+   "median_pair_fail_share": 0.02,
+   "median_of_run_p95_mm": 5.903504717582217,
+   "median_of_run_p95_mm_invertible_pairs": 4.569064745468431,
+   "median_of_run_median_mm_invertible_pairs": 2.0792295829197514
+  }
+ }
+}

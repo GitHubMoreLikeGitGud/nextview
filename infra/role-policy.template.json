@@ -1,0 +1,21 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "WriteOwnLogs",
+      "Effect": "Allow",
+      "Action": ["logs:CreateLogStream", "logs:PutLogEvents"],
+      "Resource": "arn:aws:logs:{{REGION}}:{{ACCOUNT}}:log-group:/aws/lambda/{{FUNCTION}}:*"
+    },
+    {
+      "Sid": "ReadWriteSessionObjects",
+      "Effect": "Allow",
+      "Action": ["s3:PutObject", "s3:GetObject"],
+      "Resource": [
+        "arn:aws:s3:::{{BUCKET}}/reports/*",
+        "arn:aws:s3:::{{BUCKET}}/traces/*",
+        "arn:aws:s3:::{{BUCKET}}/eval/*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NextView</title>
+<meta name="description" content="NextView: an agent that calibrates a camera by deciding where the calibration board should go next.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23127a6e'/%3E%3Cpath d='M7 9h6v6H7zM19 9h6v6h-6zM13 15h6v6h-6zM7 21h6v2H7zM19 21h6v2h-6z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="logo" aria-hidden="true"></span>
+    <div>
+      <h1>NextView</h1>
+      <p class="tagline">Where should the calibration board go next?</p>
+    </div>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" class="tab" id="tab-sim" aria-selected="true" data-tab="sim">Simulator</button>
+    <button role="tab" class="tab" id="tab-cam" aria-selected="false" data-tab="cam">Webcam</button>
+    <button role="tab" class="tab" id="tab-evidence" aria-selected="false" data-tab="evidence">Evidence</button>
+    <button role="tab" class="tab" id="tab-about" aria-selected="false" data-tab="about">About</button>
+  </nav>
+</header>
+
+<div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+
+<main>
+<!-- ===================== Simulator ===================== -->
+<section id="panel-sim" class="panel" role="tabpanel" aria-labelledby="tab-sim">
+  <form class="controls" id="sim-controls" autocomplete="off">
+    <label class="field">Preset
+      <select id="sim-preset"></select>
+    </label>
+    <fieldset class="field radios">
+      <legend>Actuator</legend>
+      <label><input type="radio" name="sim-actuator" value="robot"> Robot</label>
+      <label><input type="radio" name="sim-actuator" value="human"> Human</label>
+    </fieldset>
+    <label class="field narrow">Seed
+      <input id="sim-seed" type="number" min="0" max="2147483647" step="1" value="42">
+    </label>
+    <label class="field narrow">Budget
+      <input id="sim-budget" type="number" min="3" max="30" step="1" value="30">
+    </label>
+    <div class="buttons">
+      <button type="button" id="sim-start" class="primary">Start</button>
+      <button type="button" id="sim-step" disabled>Step</button>
+      <button type="button" id="sim-auto" disabled>Auto-run</button>
+      <button type="button" id="sim-pause" disabled>Pause</button>
+    </div>
+  </form>
+
+  <div class="grid">
+    <div class="col-main">
+      <div class="stage">
+        <canvas id="sim-canvas" width="1280" height="720" aria-label="Simulated camera frame with overlays"></canvas>
+        <div class="stage-empty" id="sim-empty"><p>Pick a preset and press <b>Start</b>. Each step captures one frame, checks it, refits the camera and plans the next board pose.</p></div>
+      </div>
+      <div class="overlay-toggles">
+        <label><input type="checkbox" id="sim-ov-corners" checked> Corners</label>
+        <label><input type="checkbox" id="sim-ov-ghost" checked> Next target</label>
+        <label><input type="checkbox" id="sim-ov-coverage"> Coverage 16×9</label>
+        <label><input type="checkbox" id="sim-ov-unc"> Uncertainty 32×18</label>
+        <span class="legend" id="sim-legend" hidden><span class="legend-bar"></span><span id="sim-legend-lo">0</span>–<span id="sim-legend-hi">1</span> px σ</span>
+      </div>
+      <div class="instruction" id="sim-instruction" aria-live="polite"></div>
+      <dl class="metrics" id="sim-metrics"></dl>
+
+      <div class="row2">
+        <div class="card">
+          <h2>Race: true field error vs frames</h2>
+          <canvas id="sim-race" class="chart" width="640" height="260" aria-label="True field p95 against accepted frames, agent versus random baseline"></canvas>
+          <p class="hint">TRUE field p95 (simulator ground truth) after each accepted frame. Agent vs a random-pose baseline on the same camera and random streams. Dashed lines: τ and 1 px.</p>
+        </div>
+        <div class="card">
+          <h2>Consequence</h2>
+          <div id="sim-consequence" class="consequence"><p class="muted">Appears after 3 accepted views.</p></div>
+          <h2>Export</h2>
+          <div id="sim-export" class="export"><p class="muted">Export is offered when the agent stops (and always needs your approval).</p></div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="col-side">
+      <div id="sim-approval" class="card approval" hidden></div>
+      <div class="card">
+        <h2>Next-view candidates</h2>
+        <div id="sim-candidates"><p class="muted">Ranked once the first calibration exists.</p></div>
+      </div>
+      <div class="card trace-card">
+        <h2>Agent trace</h2>
+        <ol id="sim-trace" class="trace" aria-live="polite"></ol>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ===================== Webcam ===================== -->
+<section id="panel-cam" class="panel" role="tabpanel" aria-labelledby="tab-cam" hidden>
+  <div class="controls">
+    <div class="buttons">
+      <button type="button" id="cam-open" class="primary">Start camera</button>
+      <button type="button" id="cam-start" disabled>Start session</button>
+      <button type="button" id="cam-capture" disabled>Capture</button>
+      <label class="toggle"><input type="checkbox" id="cam-auto" disabled> Auto-capture (1.5 s)</label>
+      <button type="button" id="cam-close" disabled>Stop camera</button>
+    </div>
+    <p class="board-links">
+      <a href="/api/board.png?kind=screen" target="_blank" rel="noopener">Show this board on your phone</a> ·
+      <a href="/api/board.png?kind=print" target="_blank" rel="noopener">Printable A4 board (300 dpi, check the 80 mm bar)</a>
+    </p>
+  </div>
+  <p class="privacy">Frames are processed in memory and never stored.</p>
+  <div class="grid">
+    <div class="col-main">
+      <div class="stage video-stage" id="cam-stage">
+        <video id="cam-video" playsinline muted></video>
+        <canvas id="cam-overlay" width="1280" height="720" aria-hidden="true"></canvas>
+        <div class="stage-empty" id="cam-empty"><p>Start the camera, show the ChArUco board (9×6 squares, DICT_5X5_100), then start a session. Overlays show the last captured frame's corners and the next target.</p></div>
+      </div>
+      <div class="instruction" id="cam-instruction" aria-live="polite"></div>
+      <dl class="metrics" id="cam-metrics"></dl>
+      <div class="card">
+        <h2>Export</h2>
+        <div id="cam-export" class="export"><p class="muted">Offered when the agent stops; needs your approval. The stop probability is transferred from simulation.</p></div>
+      </div>
+    </div>
+    <aside class="col-side">
+      <div id="cam-approval" class="card approval" hidden></div>
+      <div class="card">
+        <h2>Next-view candidates</h2>
+        <div id="cam-candidates"><p class="muted">Ranked once the first calibration exists.</p></div>
+      </div>
+      <div class="card trace-card">
+        <h2>Agent trace</h2>
+        <ol id="cam-trace" class="trace" aria-live="polite"></ol>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ===================== Evidence ===================== -->
+<section id="panel-evidence" class="panel" role="tabpanel" aria-labelledby="tab-evidence" hidden>
+  <div class="prose">
+    <h2>Evidence</h2>
+    <p>Figures from the pre-registered benchmark (E1–E12) and the failure gallery, generated from the results files and baked into this build.</p>
+  </div>
+  <div id="evidence-body"><p class="muted">Loading…</p></div>
+</section>
+
+<!-- ===================== About ===================== -->
+<section id="panel-about" class="panel" role="tabpanel" aria-labelledby="tab-about" hidden>
+  <div class="prose">
+    <p class="disclaimer">Decision support for camera calibration — not certified metrology.</p>
+    <h2>What it does</h2>
+    <p>NextView calibrates a camera by deciding where the calibration board should go next. Each step it looks at the new frame with OpenCV 5 tools, rejects bad frames with a measured reason (blur measured on the board's own edges, glare, a board too small or not found), refits the camera model, maps the per-pixel uncertainty of the calibration over the whole image, and asks for the board pose that is predicted to shrink that uncertainty the most. It stops when the predicted full-image error is below target, and it asks a person before it changes the lens model or exports a calibration.</p>
+    <h2>How a step works</h2>
+    <ol>
+      <li><b>Perceive:</b> ChArUco detection (<code>CharucoDetector</code>), slanted-edge blur and glare checks, planar pose with IPPE (<code>solvePnPGeneric</code>).</li>
+      <li><b>Decide:</b> a priority-ordered rule table (R0–R13) over the measurements; refit with <code>calibrateCameraExtended</code> (rational model or <code>calibrateCameraROExtended</code> only after approval); full intrinsic covariance from <code>projectPoints</code> Jacobians; a stop probability P(true field p95 &gt; τ).</li>
+      <li><b>Act:</b> the next target as a ghost outline plus a numeric instruction (or a robot pose), chosen from ranked candidates by predicted reduction of the 95th-percentile uncertainty.</li>
+    </ol>
+    <p>Every rule writes one trace line, so the trace is the audit record of the session.</p>
+    <h2>Privacy and limits</h2>
+    <ul>
+      <li>Webcam frames are decoded in memory for one step and never stored or logged.</li>
+      <li>The session lives in a signed token held by your browser; it expires after 6 hours. Approved exports are written to a private bucket; download links expire after an hour and the files are deleted after 30 days.</li>
+      <li>Pinhole and rational lens models only (fisheye lenses are detected and declined). Rolling shutter is not modelled. The uncertainty is first order; the stop probability is fitted in simulation and transferred to real cameras.</li>
+      <li>The service is rate limited; if it is busy the page retries automatically.</li>
+    </ul>
+    <h2>Data and attribution</h2>
+    <p>Real-data results use the <b>METRIC</b> dataset: Davide Allegro, Matteo Terreran, Stefano Ghidoni (2023), <i>METRIC – Multi-Eye To Robot Indoor Calibration Dataset</i> (Version 1.1), Zenodo, <a href="https://doi.org/10.5281/zenodo.7976757" rel="noopener">doi:10.5281/zenodo.7976757</a>, licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>. The images are read unmodified and not redistributed. Benchmark outputs are released under CC BY 4.0; the code is MIT-licensed.</p>
+    <h2>Links</h2>
+    <ul>
+      <li>Source code: <a href="https://github.com/GitHubMoreLikeGitGud/nextview" rel="noopener">github.com/GitHubMoreLikeGitGud/nextview</a></li>
+      <li>Technical report: <a href="https://github.com/GitHubMoreLikeGitGud/nextview/blob/main/docs/report.pdf" rel="noopener">docs/report.pdf</a></li>
+      <li>Board images: <a href="/api/board.png?kind=screen">screen</a>, <a href="/api/board.png?kind=print">print (A4, 300 dpi)</a></li>
+    </ul>
+    <p class="muted small" id="about-version"></p>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <span>NextView · OpenCV 5 · AWS Lambda</span>
+  <span id="foot-status" class="muted"></span>
+</footer>
+<script src="/app.js"></script>
+</body>
+</html>

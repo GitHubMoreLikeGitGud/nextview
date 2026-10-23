@@ -1,0 +1,9 @@
+# Only requirements-lambda.txt, config/ and src/nextview/ are copied into the image.
+*
+!requirements-lambda.txt
+!config/
+!src/
+src/*.egg-info
+**/__pycache__
+**/*.py[cod]
+src/nextview/_build.py

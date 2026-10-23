@@ -1,0 +1,11 @@
+{
+  "api_url": "https://t4zn85l054.execute-api.ap-southeast-1.amazonaws.com",
+  "region": "ap-southeast-1",
+  "function": "opencv-hackathon-nextview",
+  "image_tag": "389fb6f",
+  "image_digest": "sha256:33f6881335256fb32b89eddf909e2ac0b254dc10f0160d3b9c082867ed14dd04",
+  "base_image_digest": "sha256:25aee9bac65f131c5d090d3e3a36ccf232d65cf3e6c1dbd0bffd43ca7ce34406",
+  "memory_mb": 512,
+  "timeout_s": 30,
+  "deployed_at": "2026-10-23T06:46:42Z"
+}

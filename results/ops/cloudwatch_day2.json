@@ -1,0 +1,554 @@
+{
+ "window_utc": [
+  "2026-10-23T02:39:30+00:00",
+  "2026-10-23T02:56:00+00:00"
+ ],
+ "routes_handler_ms": [
+  {
+   "route": "/api/step",
+   "mode": "sim",
+   "n": "346",
+   "p50_ms": "1365.657",
+   "p95_ms": "2919.0432",
+   "max_ms": "6378"
+  },
+  {
+   "route": "/api/session",
+   "mode": "sim",
+   "n": "32",
+   "p50_ms": "1136.5",
+   "p95_ms": "3375.9",
+   "max_ms": "3384.7"
+  },
+  {
+   "route": "/api/approve",
+   "mode": "sim",
+   "n": "7",
+   "p50_ms": "1876",
+   "p95_ms": "2049.3",
+   "max_ms": "2049.3"
+  },
+  {
+   "route": "/api/approve",
+   "mode": "webcam",
+   "n": "1",
+   "p50_ms": "464.2",
+   "p95_ms": "464.2",
+   "max_ms": "464.2"
+  },
+  {
+   "route": "/api/frame",
+   "mode": "webcam",
+   "n": "23",
+   "p50_ms": "1054.3",
+   "p95_ms": "3506.8",
+   "max_ms": "3970.6"
+  },
+  {
+   "route": "/api/session",
+   "mode": "webcam",
+   "n": "1",
+   "p50_ms": "0.4",
+   "p95_ms": "0.4",
+   "max_ms": "0.4"
+  }
+ ],
+ "report": [
+  {
+   "invocations": "455",
+   "p50_ms": "1268.2939",
+   "p95_ms": "3181.055",
+   "max_ms": "6395.28",
+   "cold_starts": "7",
+   "init_avg_ms": "1392.0414",
+   "init_max_ms": "1965.87",
+   "max_mem_mb": "317.5735",
+   "gb_s": "299.5405"
+  }
+ ],
+ "nbv": [
+  {
+   "n": "230",
+   "p50_ms": "124.2865",
+   "p95_ms": "140.4046",
+   "max_ms": "179.7",
+   "cand_p50": "292",
+   "cand_min": "60"
+  }
+ ],
+ "session_sim_warm": [
+  {
+   "preset": "wide_robot_handheld",
+   "n": "13",
+   "p50_ms": "2892.2",
+   "p95_ms": "3374.4",
+   "max_ms": "3374.4"
+  },
+  {
+   "preset": "drone_survey_cam",
+   "n": "7",
+   "p50_ms": "1.7",
+   "p95_ms": "1357.5",
+   "max_ms": "1357.5"
+  },
+  {
+   "preset": "inspection_gauge_cam",
+   "n": "8",
+   "p50_ms": "1057.2",
+   "p95_ms": "1777.1",
+   "max_ms": "1777.1"
+  },
+  {
+   "preset": "phone_crack_metrology",
+   "n": "4",
+   "p50_ms": "1361.2",
+   "p95_ms": "1399.6",
+   "max_ms": "1399.6"
+  }
+ ],
+ "status_codes": [
+  {
+   "route": "/api/step",
+   "status": "200",
+   "n": "346"
+  },
+  {
+   "route": "/api/session",
+   "status": "200",
+   "n": "33"
+  },
+  {
+   "route": "/api/presets",
+   "status": "200",
+   "n": "5"
+  },
+  {
+   "route": "/style.css",
+   "status": "200",
+   "n": "2"
+  },
+  {
+   "route": "/app.js",
+   "status": "200",
+   "n": "5"
+  },
+  {
+   "route": "/",
+   "status": "200",
+   "n": "6"
+  },
+  {
+   "route": "/api/board.png",
+   "status": "200",
+   "n": "4"
+  },
+  {
+   "route": "/api/health",
+   "status": "200",
+   "n": "23"
+  },
+  {
+   "route": "/api/approve",
+   "status": "200",
+   "n": "8"
+  },
+  {
+   "route": "/api/frame",
+   "status": "200",
+   "n": "23"
+  }
+ ],
+ "slowest": [
+  {
+   "route": "/api/step",
+   "preset": "wide_robot_handheld",
+   "rule": "R13_NBV",
+   "model": "rational",
+   "views": "20",
+   "latency_ms.total": "6378.0",
+   "latency_ms.nbv": "79.0",
+   "n_candidates": "60"
+  },
+  {
+   "route": "/api/step",
+   "preset": "wide_robot_handheld",
+   "rule": "R13_NBV",
+   "model": "rational",
+   "views": "19",
+   "latency_ms.total": "5576.8",
+   "latency_ms.nbv": "159.5",
+   "n_candidates": "263"
+  },
+  {
+   "route": "/api/step",
+   "preset": "wide_robot_handheld",
+   "rule": "R13_NBV",
+   "model": "rational",
+   "views": "16",
+   "latency_ms.total": "4894.7",
+   "latency_ms.nbv": "159.0",
+   "n_candidates": "257"
+  },
+  {
+   "route": "/api/step",
+   "preset": "wide_robot_handheld",
+   "rule": "R8_UNDERFIT",
+   "model": "k5",
+   "views": "13",
+   "latency_ms.total": "4668.3"
+  },
+  {
+   "route": "/api/step",
+   "preset": "drone_survey_cam",
+   "rule": "R13_NBV",
+   "model": "k5",
+   "views": "20",
+   "latency_ms.total": "4557.4",
+   "latency_ms.nbv": "152.8",
+   "n_candidates": "293"
+  },
+  {
+   "route": "/api/step",
+   "preset": "wide_robot_handheld",
+   "rule": "R13_NBV",
+   "model": "rational",
+   "views": "17",
+   "latency_ms.total": "4554.2",
+   "latency_ms.nbv": "158.3",
+   "n_candidates": "259"
+  }
+ ],
+ "mode_case": [
+  {
+   "mode": "sim",
+   "Mode": "sim",
+   "n": "346"
+  },
+  {
+   "mode": "webcam",
+   "Mode": "webcam",
+   "n": "23"
+  }
+ ],
+ "init_warm": [
+  {
+   "n": "9",
+   "p50_ms": "581.6",
+   "max_ms": "771.9"
+  }
+ ],
+ "emf_metrics": [
+  [
+   "ApprovalsRequested",
+   [
+    [
+     "Mode",
+     "sim"
+    ],
+    [
+     "Route",
+     "/api/approve"
+    ]
+   ]
+  ],
+  [
+   "ApprovalsRequested",
+   [
+    [
+     "Mode",
+     "sim"
+    ],
+    [
+     "Route",
+     "/api/step"
+    ]
+   ]
+  ],
+  [
+   "ApprovalsRequested",
+   [
+    [
+     "Mode",
+     "webcam"
+    ],
+    [
+     "Route",
+     "/api/approve"
+    ]
+   ]
+  ],
+  [
+   "ApprovalsRequested",
+   [
+    [
+     "Mode",
+     "webcam"
+    ],
+    [
+     "Route",
+     "/api/frame"
+    ]
+   ]
+  ],
+  [
+   "ColdStart",
+   [
+    [
+     "Mode",
+     "sim"
+    ],
+    [
+     "Route",
+     "/api/approve"
+    ]
+   ]
+  ],
+  [
+   "ColdStart",
+   [
+    [
+     "Mode",
+     "sim"
+    ],
+    [
+     "Route",
+     "/api/step"
+    ]
+   ]
+  ],
+  [
+   "ColdStart",
+   [
+    [
+     "Mode",
+     "webcam"
+    ],
+    [
+     "Route",
+     "/api/approve"
+    ]
+   ]
+  ],
+  [
+   "ColdStart",
+   [
+    [
+     "Mode",
+     "webcam"
+    ],
+    [
+     "Route",
+     "/api/frame"
+    ]
+   ]
+  ],
+  [
+   "LatencyMs",
+   [
+    [
+     "Mode",
+     "sim"
+    ],
+    [
+     "Route",
+     "/api/approve"
+    ]
+   ]
+  ],
+  [
+   "LatencyMs",
+   [
+    [
+     "Mode",
+     "sim"
+    ],
+    [
+     "Route",
+     "/api/step"
+    ]
+   ]
+  ],
+  [
+   "LatencyMs",
+   [
+    [
+     "Mode",
+     "webcam"
+    ],
+    [
+     "Route",
+     "/api/approve"
+    ]
+   ]
+  ],
+  [
+   "LatencyMs",
+   [
+    [
+     "Mode",
+     "webcam"
+    ],
+    [
+     "Route",
+     "/api/frame"
+    ]
+   ]
+  ],
+  [
+   "NbvMs",
+   [
+    [
+     "Mode",
+     "sim"
+    ],
+    [
+     "Route",
+     "/api/approve"
+    ]
+   ]
+  ],
+  [
+   "NbvMs",
+   [
+    [
+     "Mode",
+     "sim"
+    ],
+    [
+     "Route",
+     "/api/step"
+    ]
+   ]
+  ],
+  [
+   "NbvMs",
+   [
+    [
+     "Mode",
+     "webcam"
+    ],
+    [
+     "Route",
+     "/api/approve"
+    ]
+   ]
+  ],
+  [
+   "NbvMs",
+   [
+    [
+     "Mode",
+     "webcam"
+    ],
+    [
+     "Route",
+     "/api/frame"
+    ]
+   ]
+  ],
+  [
+   "Rejects",
+   [
+    [
+     "Mode",
+     "sim"
+    ],
+    [
+     "Route",
+     "/api/approve"
+    ]
+   ]
+  ],
+  [
+   "Rejects",
+   [
+    [
+     "Mode",
+     "sim"
+    ],
+    [
+     "Route",
+     "/api/step"
+    ]
+   ]
+  ],
+  [
+   "Rejects",
+   [
+    [
+     "Mode",
+     "webcam"
+    ],
+    [
+     "Route",
+     "/api/approve"
+    ]
+   ]
+  ],
+  [
+   "Rejects",
+   [
+    [
+     "Mode",
+     "webcam"
+    ],
+    [
+     "Route",
+     "/api/frame"
+    ]
+   ]
+  ],
+  [
+   "Stops",
+   [
+    [
+     "Mode",
+     "sim"
+    ],
+    [
+     "Route",
+     "/api/approve"
+    ]
+   ]
+  ],
+  [
+   "Stops",
+   [
+    [
+     "Mode",
+     "sim"
+    ],
+    [
+     "Route",
+     "/api/step"
+    ]
+   ]
+  ],
+  [
+   "Stops",
+   [
+    [
+     "Mode",
+     "webcam"
+    ],
+    [
+     "Route",
+     "/api/approve"
+    ]
+   ]
+  ],
+  [
+   "Stops",
+   [
+    [
+     "Mode",
+     "webcam"
+    ],
+    [
+     "Route",
+     "/api/frame"
+    ]
+   ]
+  ]
+ ]
+}

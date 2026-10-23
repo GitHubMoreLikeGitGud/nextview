@@ -1,0 +1,6 @@
+-r requirements-lambda.txt
+scipy==1.18.0
+matplotlib==3.11.2
+pytest==9.1.1
+mcp==1.28.1
+httpx==0.28.1
